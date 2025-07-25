@@ -85,30 +85,38 @@
     </style>
 </head>
 <body>
-
 <?php
-// signup.php
+include 'db.php'; // database connection file
 
-session_start();
-if(isset($_POST['signup'])){
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  
-  $query = "INSERT INTO `users`( `full_name`, `email`, `password`) VALUES ('$name','$email','$password')";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim($_POST['name'] ?? '');
+    $email = trim(strtolower($_POST['email'] ?? ''));
+    $password = $_POST['password'] ?? '';
+    $created_at = date("Y-m-d H:i:s");
 
-  $result = mysqli_query($conn, $query);
-  if($result){
-   header("Location: user.php");
-   echo "<script>alert('Sign up successful! Welcome, $name!');</script>";
-   exit();
+    if (!empty($name) && !empty($email) && !empty($password)) {
+        // Password hash
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-  }
-  else {
-    echo "<script>alert('Error signing up. Please try again.');</script>";
-  }
+        $sql = "INSERT INTO users (name, email, password, created_at)
+                VALUES ('$name', '$email', '$hashedPassword', '$created_at')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>alert('Signup successful!'); window.location.href='login.php';</script>";
+        } else {
+            echo "Error: " . $conn->error;
+        }
+    } else {
+        echo "<script>alert('Please fill in all fields.');</script>";
+    }
 }
 ?>
+
+<form method="POST">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+</form>
 
 <?php include 'navbar.php'; ?>
 
