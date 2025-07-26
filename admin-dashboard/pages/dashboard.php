@@ -40,9 +40,15 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active bg-gradient-dark text-white" href="../pages/dashboard.php">
+          <a class="nav-link active bg-gradient-dark  text-white" href="../pages/dashboard.php">
             <i class="material-symbols-rounded opacity-5">dashboard</i>
             <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/user.php">
+            <i class="material-symbols-rounded opacity-5">person</i>
+            <span class="nav-link-text ms-1">Users</span>
           </a>
         </li>
         <li class="nav-item">
@@ -52,17 +58,16 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/vaccine.php">
-            <i class="material-symbols-rounded opacity-5">vaccines</i>
-            <span class="nav-link-text ms-1">Vaccines</span>
-          </a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/hospital.html">
+          <a class="nav-link text-dark" href="../pages/hospital.php">
             <i class="material-symbols-rounded opacity-5">local_hospital</i>
             <span class="nav-link-text ms-1">Hospitals</span>
           </a>
-        </li> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/vaccine.php">
+            <i class="material-symbols-rounded opacity-5">vaccines</i>
+            <span class="nav-link-text ms-1">Vaccine</span>
+          </a>
         <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/appointment.php">
             <i class="material-symbols-rounded opacity-5">event_available</i>
@@ -70,7 +75,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/notifications.html">
+          <a class="nav-link text-dark" href="../pages/notifications.php">
             <i class="material-symbols-rounded opacity-5">notifications</i>
             <span class="nav-link-text ms-1">Notifications</span>
           </a>
@@ -79,7 +84,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/profile.html">
+          <a class="nav-link text-dark" href="../pages/profile.php">
             <i class="material-symbols-rounded opacity-5">person</i>
             <span class="nav-link-text ms-1">Profile</span>
           </a>
@@ -131,80 +136,40 @@
                 aria-expanded="false">
                 <i class="material-symbols-rounded">notifications</i>
               </a>
-              <!-- <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New message</span> from Laur
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          13 minutes ago
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="../assets/img/small-logos/logo-spotify.svg"
-                          class="avatar avatar-sm bg-gradient-dark  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New album</span> by Travis Scott
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          1 day
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
-                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                          <title>credit-card</title>
-                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                              <g transform="translate(1716.000000, 291.000000)">
-                                <g transform="translate(453.000000, 454.000000)">
-                                  <path class="color-background"
-                                    d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
-                                    opacity="0.593633743"></path>
-                                  <path class="color-background"
-                                    d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z">
-                                  </path>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          Payment successfully completed
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          2 days
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul> -->
+              <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                <?php
+                  $notificationQuery = "SELECT c.name AS child_name, ar.preferred_date 
+                                        FROM appointment_requests ar
+                                        JOIN children c ON ar.child_id = c.child_id
+                                        WHERE ar.status = 'Pending'
+                                        ORDER BY ar.created_at DESC
+                                        LIMIT 5";
+                  $notifyResult = mysqli_query($conn, $notificationQuery);
+                  if (mysqli_num_rows($notifyResult) > 0) {
+                    while ($row = mysqli_fetch_assoc($notifyResult)) {
+                      echo '<li class="mb-2">
+                              <a class="dropdown-item border-radius-md" href="appointment.php">
+                                <div class="d-flex py-1">
+                                  <div class="avatar avatar-sm bg-gradient-info me-3 my-auto">
+                                    <span class="material-symbols-rounded text-white">event</span>
+                                  </div>
+                                  <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="text-sm font-weight-normal mb-1">
+                                      New appointment for <b>' . htmlspecialchars($row['child_name']) . '</b>
+                                    </h6>
+                                    <p class="text-xs text-secondary mb-0">
+                                      <i class="fa fa-clock me-1"></i> ' . date("d M Y", strtotime($row['preferred_date'])) . '
+                                    </p>
+                                  </div>
+                                </div>
+                              </a>
+                            </li>';
+                    }
+                  } else {
+                    echo '<li class="text-center text-sm text-muted px-2">No new notifications</li>';
+                  }
+                ?>
+              </ul>
             </li>
             <li class="nav-item d-flex align-items-center">
               <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
@@ -315,10 +280,13 @@
                     <tbody>
                     <?php
                     $query = mysqli_query($conn, "
-                      SELECT c.name AS child_name, a.preferred_date, h.vaccine_name, a.status
+                      SELECT c.name AS child_name,
+                             a.preferred_date,
+                             v.name AS vaccine_name,
+                             a.status
                       FROM appointment_requests a
                       JOIN children c ON a.child_id = c.child_id
-                      JOIN hospitals h ON a.hospital_id = h.hospital_id
+                      JOIN vaccines v ON a.vaccine_id = v.vaccine_id
                       ORDER BY a.preferred_date DESC
                       LIMIT 6
                     ");
@@ -327,16 +295,16 @@
                       while ($row = mysqli_fetch_assoc($query)) {
                         echo "<tr>
                           <td>
-                            <p class='text-sm mb-0 font-weight-bold'>{$row['child_name']}</p>
+                            <p class='text-sm mb-0 font-weight-bold'>" . htmlspecialchars($row['child_name']) . "</p>
                           </td>
                           <td>
                             <p class='text-sm mb-0'>" . date("d M Y", strtotime($row['preferred_date'])) . "</p>
                           </td>
                           <td class='text-center'>
-                            <p class='text-sm mb-0'>{$row['vaccine_name']}</p>
+                            <p class='text-sm mb-0'>" . htmlspecialchars($row['vaccine_name']) . "</p>
                           </td>
                           <td class='text-center'>
-                            <p class='text-sm mb-0'>{$row['status']}</p>
+                            <p class='text-sm mb-0'>" . htmlspecialchars($row['status']) . "</p>
                           </td>
                         </tr>";
                       }
@@ -348,15 +316,14 @@
                       </tr>";
                     }
                     ?>
-                    </tbody>
                   </table>
                   <h5 class="mb-0 font-weight-bolder">
                     <?php
-                    $result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM children");
-                    $row = mysqli_fetch_assoc($result);
-                    echo $row['total'];
+                      $result = mysqli_query($conn, "SELECT COUNT(*) AS total FROM children");
+                      $row = mysqli_fetch_assoc($result);
+                      echo $row['total'];
                     ?>
-                </h5>
+                  </h5>
                 <p class="m-3 mb-0 fw-thin text-dark">Total Patients</p>
               </div>
             </div>
