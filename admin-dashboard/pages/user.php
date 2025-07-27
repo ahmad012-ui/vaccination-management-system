@@ -319,6 +319,8 @@
     <!-- End data table -->
     </div>
   </main>
+
+  <!--    Fixed Plugin -->
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
       <i class="material-symbols-rounded py-2">settings</i>
@@ -380,7 +382,7 @@
             <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
           </div>
         </div>
-        <!-- <hr class="horizontal dark my-sm-4"> -->
+        <hr class="horizontal dark my-sm-4">
       </div>
     </div>
   </div>

@@ -205,7 +205,6 @@
               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Time</th>
               <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
-              <th class="text-secondary opacity-7 ps-2">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -251,12 +250,9 @@
                 <?php echo htmlspecialchars($row['status']); ?>
               </span>
               </td>
-              <td>
-              <a href="edit_appointment.php?id=<?php echo $row['request_id']; ?>" class="text-secondary font-weight-bold text-xs">Edit</a> |
-              <a href="delete_appointment.php?id=<?php echo $row['request_id']; ?>" class="text-danger font-weight-bold text-xs" onclick="return confirm('Are you sure?')">Delete</a>
-              </td>
             </tr>
-            <?php } ?>
+            <?php } 
+            ?>
             </tbody>
           </table>
           </div>

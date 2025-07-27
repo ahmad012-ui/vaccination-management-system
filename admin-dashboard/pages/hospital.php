@@ -232,73 +232,7 @@
             </div>
           </div>
         </div>
-
-        <!-- for Vaccine Availability Table -->
-        <!-- <div class="row">
-          <div class="col-12">
-            <div class="card my-4">
-              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                  <h6 class="text-white text-capitalize ps-3">Vaccine Availability</h6>
-                </div>
-              </div>
-              <div class="card-body px-0 pb-2">
-                <div class="table-responsive p-0">
-                  <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Hospital</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Vaccine</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quantity</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <?php
-$vaccineResult = mysqli_query($conn, "
-  SELECT 
-    h.name AS hospital_name, 
-    v.name AS vaccine_name, 
-    hv.quantity, 
-    hv.availability
-  FROM hospital_vaccine hv
-  JOIN hospitals h ON hv.hospital_id = h.hospital_id
-  JOIN vaccines v ON hv.vaccine_id = v.vaccine_id
-");
-
-if (!$vaccineResult) {
-  die("Query failed: " . mysqli_error($conn));
-}
-
-if (mysqli_num_rows($vaccineResult) == 0) {
-  echo "<tr><td colspan='4' class='text-center text-danger'>No vaccine data found for any hospital.</td></tr>";
-} else {
-  while ($row = mysqli_fetch_assoc($vaccineResult)) {
-    $status = strtolower($row['availability']) === 'available' ? 'Available' : 'Unavailable';
-    $badge = strtolower($row['availability']) === 'available' ? 'bg-gradient-success' : 'bg-gradient-danger';
-
-    echo "
-      <tr>
-        <td><p class='text-sm mb-0'>" . htmlspecialchars($row['hospital_name']) . "</p></td>
-        <td><p class='text-sm mb-0'>" . htmlspecialchars($row['vaccine_name']) . "</p></td>
-        <td><p class='text-sm mb-0'>" . htmlspecialchars($row['quantity']) . "</p></td>
-        <td><span class='badge badge-sm {$badge}'>{$status}</span></td>
-      </tr>
-    ";
-  }
-}
-?>
-
-                  </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-
+      </div>
     </div>
   </main>
 
