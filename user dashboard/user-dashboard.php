@@ -142,8 +142,8 @@ $child_gender = $user['children'][0]['gender'] ?? 'N/A';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link active">About</a>
+                        <a href="/vms/index.php" class="nav-item nav-link">Home</a>
+                        <a href="/vms.about.php" class="nav-item nav-link active">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
@@ -152,9 +152,9 @@ $child_gender = $user['children'][0]['gender'] ?? 'N/A';
                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                        <a href="/vms/contact.php" class="nav-item nav-link">Contact Us</a>
                     </div>
-                    <a href="contact.html" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
+                    <a href="/vms/contact.php" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Book Appointment</a>
                     <a href="login.html"><i class="fa-solid fa-circle-user rounded-pill  px-1 flex-wrap primary" style="font-size: 32px; margin-left: 20px;"></i></a>
                 </div>
             </nav>
