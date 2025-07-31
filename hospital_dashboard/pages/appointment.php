@@ -13,13 +13,26 @@ if (!$conn) {
     die("<h3 style='color:red'>Database connection failed: " . mysqli_connect_error() . "</h3>");
 }
 
-$query = "SELECT a.request_id, c.name AS child_name, a.preferred_date, a.status 
+
+// Fetch appointment data
+$query = "SELECT a.request_id, c.name AS child_name, a.preferred_date, a.status,
+                 u.name AS parent_name, u.contact, u.email
           FROM appointment_requests a
           JOIN children c ON a.child_id = c.child_id
+          JOIN users u ON c.parent_id = u.user_id
           WHERE a.hospital_id = $hospital_id
           ORDER BY a.preferred_date DESC";
 
 $result = mysqli_query($conn, $query);
+
+  // for unread notifications
+  $notif_query = "SELECT COUNT(*) AS unread_count 
+                FROM appointment_requests 
+                WHERE hospital_id = $hospital_id AND read_status = 0";
+
+  $notif_result = mysqli_query($conn, $notif_query);
+  $notif_data = mysqli_fetch_assoc($notif_result);
+  $unread_count = $notif_data['unread_count'] ?? 0;
 ?>
 
 
@@ -77,8 +90,14 @@ $result = mysqli_query($conn, $query);
 
       <li class="nav-item">
         <a class="nav-link" href="notification.php">
-          <i class="fas fa-bell text-dark text-sm opacity-10"></i>
-          <span class="nav-link-text text-dark ms-1">Notifications</span>
+          <div class="d-flex align-items-center">
+            <i class="fas fa-envelope-open-text text-dark text-sm opacity-10 me-2"></i>
+          </div>
+            <span class="nav-link-text text-dark ">Notifications</span>
+
+          <?php if ($unread_count > 0): ?>
+            <span class="badge bg-danger ms-2"><?php echo $unread_count; ?></span>
+          <?php endif; ?>
         </a>
       </li>
 
@@ -104,51 +123,77 @@ $result = mysqli_query($conn, $query);
   </div>
 </aside>
 
-<!-- main -->
-<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+<!-- Main content -->
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+    <?php include 'includes/navbar.php'; ?>
 
-   <!-- Navbar --> 
-   <?php include 'includes/navbar.php'; ?>
-   <!-- End Navbar -->
-
-   <!-- appointment table -->
-   <div class="card mt-4">
-  <div class="card-header pb-0">
-    <h6>Appointments</h6>
-  </div>
-  <div class="card-body px-0 pt-0 pb-2">
-    <div class="table-responsive p-0">
-      <table class="table align-items-center mb-0 text-center">
-        <thead>
-          <tr>
-          <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">ID</th>
-            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Child Name</th>
-            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Preferred Date</th>
-            <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php if (mysqli_num_rows($result) > 0): ?>
-            <?php while ($row = mysqli_fetch_assoc($result)): ?>
-              <tr>
-                <td><?php echo $row['id']; ?></td>
-                <td><?php echo htmlspecialchars($row['child_name']); ?></td>
-                <td><?php echo date('d M Y', strtotime($row['preferred_date'])); ?></td>
-                <td><?php echo ucfirst($row['status']); ?></td>
-              </tr>
-            <?php endwhile; ?>
-          <?php else: ?>
-            <tr>
-              <td colspan="3" class="text-muted">No appointments found.</td>
-            </tr>
-          <?php endif; ?>
-        </tbody>
-      </table>
+    <div class="container-fluid py-4 mt-4">
+      <div class="card">
+        <div class="card-header pb-2 text-center font-weight-bold text-uppercase bg-gradient-primary">
+          <h6>Appointment Requests</h6>
+        </div>
+        <div class="card-body px-0 pt-0 pb-2">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0">
+              <thead class="text-center">
+                <tr>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder">Child</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder">Parent</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder">Contact</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder">Preferred Date</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder">Status</th>
+                  <th class="text-uppercase text-secondary text-xs font-weight-bolder">Action</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <?php if (mysqli_num_rows($result) > 0): ?>
+                  <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                    <tr>
+                      <td><?php echo htmlspecialchars($row['child_name']); ?></td>
+                      <td><?php echo htmlspecialchars($row['parent_name']); ?></td>
+                      <td>
+                        <strong>Phone:</strong> <?php echo htmlspecialchars($row['contact']); ?><br>
+                        <small><strong>Email:</strong> <?php echo htmlspecialchars($row['email']); ?></small>
+                      </td>
+                      <td><?php echo date("d M Y", strtotime($row['preferred_date'])); ?></td>
+                      <td>
+                        <span class="badge bg-gradient-<?php 
+                          echo $row['status'] === 'Approved' ? 'success' : 
+                               ($row['status'] === 'Rejected' ? 'danger' : 'warning'); ?>">
+                          <?php echo $row['status']; ?>
+                        </span>
+                      </td>
+                      <td>
+                        <?php if (strtolower($row['status']) === 'pending'): ?>
+                          <a href="update-status.php?id=<?php echo $row['request_id']; ?>&status=Approved" 
+                             class="btn btn-sm btn-success me-1">Approve</a>
+                          <a href="update-status.php?id=<?php echo $row['request_id']; ?>&status=Rejected" 
+                             class="btn btn-sm btn-danger">Reject</a>
+                       <?php else: ?>
+                          <em class="text-muted">No action</em>
+                       <?php endif; ?>
+                      </td>
+                    </tr>
+                    <?php endwhile; ?>
+                    <?php else: ?>
+                  <tr><td colspan="6">No appointment requests found.</td></tr>
+                <?php endif; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-</main>
-   
+  </main>
+  
+  
+  <!-- Core JS Files -->
+<script src="/project/hospital_dashboard/assets/js/core/popper.min.js"></script>
+<script src="/project/hospital_dashboard/assets/js/core/bootstrap.min.js"></script>
+
+<!-- Material Dashboard JS -->
+<script src="/project/hospital_dashboard/assets/js/material-dashboard.min.js?v=3.2.0"></script>
+
 </body>
 </html>

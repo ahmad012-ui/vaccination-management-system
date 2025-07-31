@@ -98,8 +98,14 @@
     </ul>
   </div>
 </aside>
-<!-- Optional JS (if needed) -->
-<script src="../../assets/js/core/bootstrap.min.js"></script>
+
+<!-- Core JS Files -->
+<script src="/project/hospital_dashboard/assets/js/core/popper.min.js"></script>
+<script src="/project/hospital_dashboard/assets/js/core/bootstrap.min.js"></script>
+
+<!-- Material Dashboard JS -->
+<script src="/project/hospital_dashboard/assets/js/material-dashboard.min.js?v=3.2.0"></script>
+
 </body>
 
 </html>
