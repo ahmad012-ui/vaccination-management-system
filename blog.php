@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Vaccination Blog - VMS</title>
+    <title>Vaccino Blog | Vaccine Awareness, Health Campaigns & Immunization Updates</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Bootstrap & Font Awesome -->
@@ -109,10 +109,11 @@ a.text-primary:hover {
             <h1 class="mb-4">Vaccination Awareness & Updates</h1>
             <p>Stay informed about the importance of vaccines, health campaigns, and real-life success stories.</p>
         </div>
+        
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm">
-                    <img src="img/Why Childhood Vaccines Matter.jpg" class="card-img-top" alt="Awareness">
+                    <img src="img/blog-child.jpg" style="height: 300px;" class="card-img-top" alt="Awareness">
                     <div class="card-body">
                         <h5 class="card-title">Why Childhood Vaccines Matter</h5>
                         <p class="card-text">Vaccines protect your child from deadly diseases. Learn what’s recommended by age.</p>
@@ -122,7 +123,7 @@ a.text-primary:hover {
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm">
-                    <img src="img/National Immunization Drive 2025.jpg" class="card-img-top" alt="Campaign">
+                    <img src="img/child-blog.jpg" style="height: 300px;" class="card-img-top" alt="Campaign">
                     <div class="card-body">
                         <h5 class="card-title">National Immunization Drive 2025</h5>
                         <p class="card-text">Check schedules and how our system helps parents track and register easily.</p>
@@ -132,7 +133,7 @@ a.text-primary:hover {
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 shadow-sm">
-                    <img src="img/Preventing Outbreak.jpeg" class="card-img-top" alt="Story">
+                    <img src="img/parents.jpg" style="height: 300px;" class="card-img-top" alt="Story">
                     <div class="card-body">
                         <h5 class="card-title">Success Story: Preventing Outbreak</h5>
                         <p class="card-text">How a local hospital used our system to prevent a measles outbreak in 2024.</p>
@@ -149,10 +150,10 @@ a.text-primary:hover {
     <div class="container py-5">
         <div class="row g-5">
             <!-- Project Info -->
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="text-white mb-4"><i class="fas fa-syringe me-3"></i>Vaccino</h4>
-                    <p>Vaccino is an online vaccination booking and management system helping parents schedule timely vaccinations for their children with ease and convenience.</p>
+                    <p class="text-white" style="text-decoration: none;">Vaccino is an online vaccination booking and management system helping parents schedule timely vaccinations for their children with ease and convenience.</p>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-share fa-2x text-white me-2"></i>
                         <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -164,27 +165,27 @@ a.text-primary:hover {
             </div>
 
             <!-- Quick Links -->
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="mb-4 text-white">Quick Links</h4>
-                    <a href="about.html"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                    <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                    <a href="blog.html"><i class="fas fa-angle-right me-2"></i> News & Updates</a>
-                    <a href="team.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+                    <a href="about.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right text-white me-2"></i> About Us</a>
+                    <a href="contact.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                    <a href="#" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                    <a href="#" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                    <a href="blog.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> News & Updates</a>
+                    <a href="team.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Our Team</a>
                 </div>
             </div>
 
             <!-- Contact Info -->
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="mb-4 text-white">Contact Info</h4>
-                    <a href="#"><i class="fa fa-map-marker-alt me-2"></i> Karachi, Pakistan</a>
-                    <a href="mailto:info@vaccino.com"><i class="fas fa-envelope me-2"></i> info@vaccino.com</a>
-                    <a href="mailto:support@vaccino.com"><i class="fas fa-envelope me-2"></i> support@vaccino.com</a>
-                    <a href="tel:+923001234567"><i class="fas fa-phone me-2"></i> +92 300 1234567</a>
-                    <a href="#"><i class="fas fa-print me-2"></i> +92 300 1234567</a>
+                    <a href="#"class="text-white" style="text-decoration: none;"><i class="fa fa-map-marker-alt me-2"></i> Karachi, Pakistan</a>
+                    <a href="mailto:info@vaccino.com"class="text-white" style="text-decoration: none;"><i class="fas fa-envelope me-2"></i> info@vaccino.com</a>
+                    <a href="mailto:support@vaccino.com"class="text-white" style="text-decoration: none;"><i class="fas fa-envelope me-2"></i> support@vaccino.com</a>
+                    <a href="tel:+923001234567" class="text-white" style="text-decoration: none;"><i class="fas fa-phone me-2"></i> +92 300 1234567</a>
+                    <a href="#"class="text-white" style="text-decoration: none;"><i class="fas fa-print me-2"></i> +92 300 1234567</a>
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+<?php include 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,28 +18,7 @@
 <link href="style.css" rel="stylesheet">
 </body>
 </html>
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-dark px-5 d-none d-lg-block">
-            <div class="row gx-0 align-items-center" style="height: 45px;">
-                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-                    <div class="d-flex flex-wrap">
-                        <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                        <a href="#" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                        <a href="#" class="text-light me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end">
-                    <div class="d-flex align-items-center justify-content-end">
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Topbar End -->
-
+<?php include 'topbar.php'; ?>
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
@@ -53,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.php" class="nav-item nav-link">Home</a>
-                        <a href="about.php" class="nav-item nav-link">How It Works</a>
+                        <a href="about.php" class="nav-item nav-link">About Us</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
@@ -61,7 +41,7 @@
                                 <a href="testimonial.php" class="dropdown-item">Feedback</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
+                        <a href="contact.php" class="nav-item nav-link active">Contact Us</a>
                     </div>
                     <a href="login.php" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0" >Book Appointment</a>
                     <a href="login.php"class="fa-solid fa-circle-user rounded-pill  px-1 flex-wrap primary" style="font-size: 32px; margin-left: 20px;"></i></a>
@@ -76,113 +56,95 @@
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h1>
                 <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">Contact</li>
+                     <li class="breadcrumb-item"><a href="contact.php">contact</a></li>
                 </ol>    
             </div>
         </div>
-        <!-- contact.php -->
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"] ?? '';
-    $email = $_POST["email"] ?? '';
-    $phone = $_POST["phone"] ?? '';
-    $subject = $_POST["subject"] ?? '';
-    $message = $_POST["message"] ?? '';
+        <?php
+$conn = mysqli_connect("localhost", "root", "", "e_project");
 
-    // Connect to your DB
-    $conn = new mysqli("localhost", "root", "", "e_project");
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Insert query
-    $sql = "INSERT INTO contact_messages (name, email, phone, subject, message)
-            VALUES ('$name', '$email', '$phone', '$subject', '$message')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Message sent successfully!');</script>";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$child_id = $_POST['child_id'];
+$hospital_id = $_POST['hospital_id'];
+$vaccine_id = $_POST['vaccine_id'];
+$preferred_date = $_POST['preferred_date'];
+$status = "Pending"; // default status
+
+$sql = "INSERT INTO appointment_requests (child_id, hospital_id, vaccine_id, preferred_date, status)
+        VALUES ('$child_id', '$hospital_id', '$vaccine_id', '$preferred_date', '$status')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "<script>alert('Request submitted successfully!'); window.location.href='request_form.php';</script>";
+} else {
+    echo "Error: " . mysqli_error($conn);
+}
+}
+mysqli_close($conn);
 ?>
-         <div class="container-fluid py-5" style="background: url('img/appointment-bg.jpg') no-repeat center center; background-size: cover;">
-    <div class="container py-5">
-        <div class="row g-5 align-items-center bg-light bg-opacity-75 p-4 rounded shadow-lg">
 
-            <!-- Left Side: Info -->
-            <div class="col-lg-6 text-dark">
-                <h6 class="text-primary text-uppercase fw-bold">SOLUTIONS TO YOUR CHILD’S HEALTH</h6>
-                <h1 class="display-6 fw-bold mb-4 text-dark">Best Vaccination Services With Minimal Wait</h1>
-                <p class="mb-4">Our platform helps parents manage their child's vaccinations with trusted hospitals, timely scheduling, and complete reports — all in one place.</p>
+<?php
+$conn = mysqli_connect("localhost", "root", "", "e_project");
 
-                <p class="mb-3">
-                    <i class="fas fa-check-circle text-primary me-2"></i>
-                    Timely Vaccination Scheduling
-                </p>
-                <p class="mb-3">
-                    <i class="fas fa-check-circle text-primary me-2"></i>
-                    Book Nearby Trusted Hospitals
-                </p>
-                <p class="mb-3">
-                    <i class="fas fa-check-circle text-primary me-2"></i>
-                    Parent & Child Friendly System
-                </p>
-                <a href="#" class="btn btn-primary px-4 mt-3">More Details</a>
-            </div>
+$children = mysqli_query($conn, "SELECT child_id, name FROM children");
+$hospitals = mysqli_query($conn, "SELECT hospital_id, name FROM hospitals");
+$vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
 
-            <!-- Right Side: Form -->
-            <div class="col-lg-6">
-                <div class="bg-white p-4 shadow rounded">
-                    <h6 class="text-primary fw-bold">GET IN TOUCH</h6>
-                    <h2 class="mb-4">Get Appointment</h2>
-                    <form action="submit_booking.php" method="post">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" name="email" class="form-control" placeholder="Email" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
-                            </div>
-                            <div class="col-md-6">
-                                <select name="gender" class="form-select" required>
-                                    <option value="">Your Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="date" name="date" class="form-control" required>
-                            </div>
-                            <div class="col-md-6">
-                                <select name="department" class="form-select" required>
-                                    <option value="">Department</option>
-                                    <option value="General">General</option>
-                                    <option value="Vaccination">Vaccination</option>
-                                    <option value="Pediatrics">Pediatrics</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <textarea name="comments" class="form-control" rows="3" placeholder="Write Comments"></textarea>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button class="btn btn-primary w-100 py-2" type="submit">SUBMIT NOW</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+?>
+<?php
+$result = mysqli_query($conn, "SELECT child_id, name FROM children");
 
-        </div>
-    </div>
-</div>
+if (!$result) {
+    die("Query Failed: " . mysqli_error($conn));
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaccination Request</title>
+</head>
+<body>
+    <h2>Send Vaccination Request</h2>
+    <form action="submit_request.php" method="POST">
+        <label>Child:</label>
+        <select name="child_id" required>
+            <option value="">Select Child</option>
+            <?php while($row = mysqli_fetch_assoc($children)) { ?>
+                <option value="<?= $row['child_id'] ?>"><?= $row['name'] ?></option>
+            <?php } ?>
+        </select><br><br>
+
+        <label>Hospital:</label>
+        <select name="hospital_id" required>
+            <option value="">Select Hospital</option>
+            <?php while($row = mysqli_fetch_assoc($hospitals)) { ?>
+                <option value="<?= $row['hospital_id'] ?>"><?= $row['name'] ?></option>
+            <?php } ?>
+        </select><br><br>
+
+        <label>Vaccine:</label>
+        <select name="vaccine_id" required>
+            <option value="">Select Vaccine</option>
+            <?php while($row = mysqli_fetch_assoc($vaccines)) { ?>
+                <option value="<?= $row['vaccine_id'] ?>"><?= $row['name'] ?></option>
+            <?php } ?>
+        </select><br><br>
+
+        <label>Preferred Date:</label>
+        <input type="date" name="preferred_date" required><br><br>
+
+        <button type="submit">Send Request</button>
+    </form>
+</body>
+</html>
 
 
 <!-- Header Start -->
@@ -349,4 +311,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Custom JS -->
 <script src="js/main.js"></script>
-

@@ -3,7 +3,7 @@
     <div class="container py-5">
         <div class="row g-5">
             <!-- Project Info -->
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="text-white mb-4"><i class="fas fa-syringe me-3"></i>Vaccino</h4>
                     <p>Vaccino is an online vaccination booking and management system helping parents schedule timely vaccinations for their children with ease and convenience.</p>
@@ -18,7 +18,7 @@
             </div>
 
             <!-- Quick Links -->
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="mb-4 text-white">Quick Links</h4>
                     <a href="about.html"><i class="fas fa-angle-right me-2"></i> About Us</a>
@@ -31,14 +31,14 @@
             </div>
 
             <!-- Contact Info -->
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="mb-4 text-white">Contact Info</h4>
                     <a href="#"><i class="fa fa-map-marker-alt me-2"></i> Karachi, Pakistan</a>
                     <a href="mailto:info@vaccino.com"><i class="fas fa-envelope me-2"></i> info@vaccino.com</a>
                     <a href="mailto:support@vaccino.com"><i class="fas fa-envelope me-2"></i> support@vaccino.com</a>
                     <a href="tel:+923001234567"><i class="fas fa-phone me-2"></i> +92 300 1234567</a>
-                    <a href="#"><i class="fas fa-print me-2"></i> +92 300 1234567</a>
+                    <a href="#" ><i class="fas fa-print me-2"></i> +92 300 1234567</a>
                 </div>
             </div>
         </div>
@@ -62,4 +62,3 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Custom JS -->
 <script src="js/main.js"></script>
-
