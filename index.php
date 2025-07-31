@@ -7,6 +7,9 @@
   <title>Document</title>
 </head>
 <body>
+    <!-- font awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Add this in your <head> section -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css"> <!-- your main template stylesheet -->
@@ -19,6 +22,7 @@
 </body>
 </html>
 <?php include 'topbar.php'; ?>
+
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
@@ -33,7 +37,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.php" class="nav-item nav-link">Home</a>
-                        <a href="about.php" class="nav-item nav-link">About Us</a>
+                        <a href="about.php" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
@@ -148,7 +152,7 @@ if (!$result) {
 
 
 <!-- Header Start -->
-<div class="container-fluid bg-breadcrumb">
+<!-- <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Medical Team</h3>
         <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
@@ -157,7 +161,7 @@ if (!$result) {
             <li class="breadcrumb-item active text-primary">Team</li>
         </ol>    
     </div>
-</div>
+</div> -->
 <!-- Header End -->
 
 <!-- Team Start -->
@@ -175,7 +179,7 @@ if (!$result) {
            <div class="row g-4 justify-content-center">
 
     <!-- Doctor 1 -->
-    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"   data-wow-delay="0.1s" >
         <div class="team-item rounded">
             <div class="team-img rounded-top h-100">
                 <div class="team-icon d-flex justify-content-center">

@@ -25,7 +25,25 @@
 
 <body>
 
-<?php include 'topbar.php'; ?>
+  <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0 align-items-center" style="height: 45px;">
+            <div class="col-lg-8 text-center text-lg-start">
+                <div class="d-flex flex-wrap">
+                    <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                    <a href="#" class="text-light me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
+                    <a href="#" class="text-light"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-light btn-square border rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-light btn-square border rounded-circle me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-light btn-square border rounded-circle me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-light btn-square border rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
@@ -39,7 +57,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0">
         <a href="index.php" class="nav-item nav-link">Home</a>
-        <a href="about.php" class="nav-item nav-link">How It Works</a>
+        <a href="about.php" class="nav-item nav-link">About</a>
         <div class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
           <div class="dropdown-menu m-0">

@@ -22,7 +22,7 @@ include "db.php";
   <div class="container py-5">
     <div class="row g-5 align-items-center">
       <div class="col-lg-6">
-        <h1 class="display-5 mb-4">Book Vaccination Appointment</h1>
+        <h1 class="display-5 mb-4">Book Vaccination Appointment </h1>
         <p class="mb-4">Fill the form below to request an appointment for your child's vaccination. Admin will review and approve the request.</p>
       </div>
       <div class="col-lg-6">

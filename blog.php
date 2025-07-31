@@ -88,7 +88,7 @@ a.text-primary:hover {
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="index.php" class="nav-item nav-link">Home</a>
-                <a href="about.php" class="nav-item nav-link">How It Works</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
@@ -105,9 +105,9 @@ a.text-primary:hover {
     <!-- Navbar End -->
 
     <!-- Blog Start -->
-    <div class="container py-5 mt-5">
+    <div class="container py-5">
         <div class="text-center mb-5">
-            <h4 class="text-primary">Latest Health Updates</h4>
+            <h4 class="text-primary mt-5">Latest Health Updates</h4>
             <h1 class="mb-4">Vaccination Awareness & Updates</h1>
             <p>Stay informed about the importance of vaccines, health campaigns, and real-life success stories.</p>
         </div>

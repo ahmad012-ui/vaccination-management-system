@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <div class="signup-wrapper">
     <main>
-      <header><h2>Create Your Account</h2></header>
+      <header><h2>Create Your Account </h2></header>
       <section>
         <form id="signupForm" action="signup.php" method="POST" onsubmit="return validateSignup()">
           <label for="name" class="sr-only">Name</label>
