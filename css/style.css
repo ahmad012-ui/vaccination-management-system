@@ -6,6 +6,7 @@
     visibility: hidden;
     transition: opacity .5s ease-out, visibility 0s linear .5s;
     z-index: 99999;
+    position: relative; right: 100px;
 }
 
 #spinner.show {

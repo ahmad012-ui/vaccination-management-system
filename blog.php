@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Vaccino Blog | Vaccine Awareness, Health Campaigns & Immunization Updates</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
 
     <!-- Bootstrap & Font Awesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,6 +54,7 @@ a.text-primary:hover {
 </head>
 
 <body>
+    <?php include 'topbar.php'; ?>
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark px-5 d-none d-lg-block">
         <div class="row gx-0 align-items-center" style="height: 45px;">
@@ -76,7 +78,7 @@ a.text-primary:hover {
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0 mt-5">
         <a href="index.html" class="navbar-brand p-0">
             <h1 class="text-primary m-0"><i class="fas fa-syringe me-3"></i>Vaccino</h1>
         </a>
@@ -103,7 +105,7 @@ a.text-primary:hover {
     <!-- Navbar End -->
 
     <!-- Blog Start -->
-    <div class="container py-5">
+    <div class="container py-5 mt-5">
         <div class="text-center mb-5">
             <h4 class="text-primary">Latest Health Updates</h4>
             <h1 class="mb-4">Vaccination Awareness & Updates</h1>
