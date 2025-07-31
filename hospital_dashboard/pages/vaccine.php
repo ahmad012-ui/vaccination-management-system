@@ -1,22 +1,23 @@
 <?php
- session_start();
-//  $_SESSION['hospital_id'] = 1; // Use a valid hospital_id from your DB 
-  // Include database connection
- include '../database/db.php';
-  if (session_status() === PHP_SESSION_NONE) {
-      session_start();
-    }
-  
-//     if (!isset($_SESSION['hospital_id'])) {
-//     die("<h3 style='color:red'>Unauthorized access. Please log in first.</h3>");
-//    }
+session_start();
+include '../database/db.php';
 
-// $hospital_id = $_SESSION['hospital_id'];
+if (!isset($_SESSION['hospital_id'])) {
+    $_SESSION['hospital_id'] = 1; // TEMP for dev only — use real ID from login
+}
 
- // For safety if connection fails
-  if (!$conn) {
+$hospital_id = $_SESSION['hospital_id'];
+
+if (!$conn) {
     die("<h3 style='color:red'>Database connection failed: " . mysqli_connect_error() . "</h3>");
-  }
+}
+
+$query = "SELECT hv.id, v.name, hv.quantity, hv.availability, hv.description 
+          FROM hospital_vaccine hv
+          JOIN vaccines v ON hv.vaccine_id = v.vaccine_id
+          WHERE hv.hospital_id = $hospital_id";
+
+$result = mysqli_query($conn, $query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
