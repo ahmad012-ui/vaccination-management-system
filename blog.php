@@ -3,19 +3,21 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Vaccino Blog | Vaccine Awareness, Health Campaigns & Immunization Updates</title>
+    <title>Vaccination Blog - VMS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    
 
     <!-- Bootstrap & Font Awesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 
     <!-- Custom Styles -->
     <link href="css/style.css" rel="stylesheet">
     <style>
         :root {
-    --primary: #00cdf5;
+    --primary: #00ccff;
 }
 
 .text-primary {
@@ -32,8 +34,8 @@
 }
 
 .btn-primary:hover {
-    background-color: #00b7db !important;
-    border-color: #00b7db !important;
+    background-color: #00ccff !important;
+    border-color: #00ccff !important;
 }
 
 .btn-outline-primary {
@@ -47,14 +49,16 @@
 }
 
 a.text-primary:hover {
-    color: #00b7db !important;
+    color: #00ccff !important;
 }
 
     </style>
 </head>
 
 <body>
-    <?php include 'topbar.php'; ?>
+
+
+<?php include 'topbar.php'; ?>
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark px-5 d-none d-lg-block">
         <div class="row gx-0 align-items-center" style="height: 45px;">
@@ -76,9 +80,20 @@ a.text-primary:hover {
         </div>
     </div>
     <!-- Topbar End -->
-
+     
+     <!-- banner -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4 wow fadeInDown" style="font-family: serif;" data-wow-delay="0.1s">Blog</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a href="index.php" style="text-decoration: none;">Home</a></li>
+            <li class="breadcrumb-item"><a href="#" style="text-decoration: none;">Pages</a></li>
+            <li class="breadcrumb-item active text-primary">Our Blog</li>
+        </ol>    
+    </div>
+</div>
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0 mt-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white mt-5 px-4 px-lg-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
             <h1 class="text-primary m-0"><i class="fas fa-syringe me-3"></i>Vaccino</h1>
         </a>
@@ -104,95 +119,60 @@ a.text-primary:hover {
     </nav>
     <!-- Navbar End -->
 
-    <!-- Blog Start -->
-    <div class="container py-5">
-        <div class="text-center mb-5">
-            <h4 class="text-primary mt-5">Latest Health Updates</h4>
-            <h1 class="mb-4">Vaccination Awareness & Updates</h1>
-            <p>Stay informed about the importance of vaccines, health campaigns, and real-life success stories.</p>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-sm">
-                    <img src="img/blog-child.jpg" style="height: 300px;" class="card-img-top" alt="Awareness">
-                    <div class="card-body">
-                        <h5 class="card-title">Why Childhood Vaccines Matter</h5>
-                        <p class="card-text">Vaccines protect your child from deadly diseases. Learn what’s recommended by age.</p>
-                        <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-sm">
-                    <img src="img/child-blog.jpg" style="height: 300px;" class="card-img-top" alt="Campaign">
-                    <div class="card-body">
-                        <h5 class="card-title">National Immunization Drive 2025</h5>
-                        <p class="card-text">Check schedules and how our system helps parents track and register easily.</p>
-                        <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 shadow-sm">
-                    <img src="img/parents.jpg" style="height: 300px;" class="card-img-top" alt="Story">
-                    <div class="card-body">
-                        <h5 class="card-title">Success Story: Preventing Outbreak</h5>
-                        <p class="card-text">How a local hospital used our system to prevent a measles outbreak in 2024.</p>
-                        <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+   <!-- Blog Start -->
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h4 class="text-primary">Latest Health Updates</h4>
+        <h1 class="mb-4">Vaccination Awareness & Updates</h1>
+        <p>Stay informed about the importance of vaccines, health campaigns, and real-life success stories.</p>
     </div>
-    <!-- Blog End -->
-
-  <!-- Footer Start -->
-  <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <!-- Project Info -->
-            <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="text-white mb-4"><i class="fas fa-syringe me-3"></i>Vaccino</h4>
-                    <p class="text-white" style="text-decoration: none;">Vaccino is an online vaccination booking and management system helping parents schedule timely vaccinations for their children with ease and convenience.</p>
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-share fa-2x text-white me-2"></i>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+    <div class="row g-4">
+        <!-- Blog Card 1 -->
+       <div class="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+            <div class="card blog-card border-0 shadow-sm h-100">
+                <img src="img/blog-child.jpg" class="card-img-top" alt="Awareness">
+                <div class="card-body">
+                    <h5 class="card-title">Why Childhood Vaccines Matter</h5>
+                    <p class="card-text">Vaccines protect your child from deadly diseases. Learn what’s recommended by age.</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
                 </div>
             </div>
+        </div>
 
-            <!-- Quick Links -->
-            <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Quick Links</h4>
-                    <a href="about.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right text-white me-2"></i> About Us</a>
-                    <a href="contact.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                    <a href="#" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                    <a href="#" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                    <a href="blog.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> News & Updates</a>
-                    <a href="team.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+        <!-- Blog Card 2 -->
+        <div class="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+            <div class="card blog-card border-0 shadow-sm h-100">
+                <img src="img/child-blog.jpg" class="card-img-top" alt="Campaign">
+                <div class="card-body">
+                    <h5 class="card-title">National Immunization Drive 2025</h5>
+                    <p class="card-text">Check schedules and how our system helps parents track and register easily.</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
                 </div>
             </div>
+        </div>
 
-            <!-- Contact Info -->
-            <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Contact Info</h4>
-                    <a href="#"class="text-white" style="text-decoration: none;"><i class="fa fa-map-marker-alt me-2"></i> Karachi, Pakistan</a>
-                    <a href="mailto:info@vaccino.com"class="text-white" style="text-decoration: none;"><i class="fas fa-envelope me-2"></i> info@vaccino.com</a>
-                    <a href="mailto:support@vaccino.com"class="text-white" style="text-decoration: none;"><i class="fas fa-envelope me-2"></i> support@vaccino.com</a>
-                    <a href="tel:+923001234567" class="text-white" style="text-decoration: none;"><i class="fas fa-phone me-2"></i> +92 300 1234567</a>
-                    <a href="#"class="text-white" style="text-decoration: none;"><i class="fas fa-print me-2"></i> +92 300 1234567</a>
+        <!-- Blog Card 3 -->
+      <div class="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+            <div class="card blog-card border-0 shadow-sm h-100">
+                <img src="img/parents.jpg" class="card-img-top" alt="Story">
+                <div class="card-body">
+                    <h5 class="card-title">Success Story: Preventing Outbreak</h5>
+                    <p class="card-text">How a local hospital used our system to prevent a measles outbreak in 2025.</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Blog End -->
+
+  <?php include 'footer.php'; ?>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+
 <!-- Footer End -->
 
         <!-- JavaScript Libraries -->

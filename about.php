@@ -1,4 +1,3 @@
-
 <!DOCTYPE php>
 <php lang="en">
 <head>
@@ -7,6 +6,8 @@
   <title>Document</title>
 </head>
 <body>
+     <!-- font awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Add this in your <head> section -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css"> <!-- your main template stylesheet -->
@@ -14,13 +15,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script> <!-- if used -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+
 
 <link href="style.css" rel="stylesheet">
 </body>
 </php>
-<?php include 'topbar.php'; ?>
-
-
+<?php include 'topbar.php'?>
    <!-- Navbar & Hero Start -->
    <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
@@ -34,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.php" class="nav-item nav-link">Home</a>
-                        <a href="about.php" class="nav-item nav-link">How It Works</a>
+                        <a href="about.php" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
@@ -51,7 +52,17 @@
         </div>
         <!-- Navbar End -->
 
-
+     <!-- banner -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">About Us</h3>
+        <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item active text-primary">About Us</li>
+        </ol>    
+    </div>
+</div>
 
 <!DOCTYPE php>
 <php lang="en">
@@ -81,12 +92,12 @@
     <div class="container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
-                <div class="about-img pb-5 ps-5">
-                    <img src="img/vaccine.jpg" class="img-fluid rounded w-100" style="object-fit: cover;" alt="Vaccination Awareness">
-                    <div class="about-img-inner">
-                        <img src="img/vaccine1.jpg" class="img-fluid rounded-circle w-100 h-100" alt="Child Immunization">
-                    </div>
-                    <div class="about-experience">10+ Years of Public Health</div>
+                <div class="about-img pb-5 ps-5" style="margin-right: 50px;">
+                    <img src="img/about-pic.jpg" style="height: 400px; width: 400px; border-radius: 50%;" class="img-fluid" style="object-fit: cover;" alt="Vaccination Awareness">
+                    <!-- <div class="about-img-inner">
+                        <img src="" class="img-fluid rounded-circle w-100 h-100" alt="Child Immunization">
+                    </div> -->
+               
                 </div>
             </div>
             <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
@@ -99,7 +110,7 @@
                         <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i>Integrated government campaigns</p>
                         <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i>Secure and private digital health records</p>
                     </div>
-                    <a href="contact.php" class="btn btn-primary rounded-pill text-white py-3 px-5">Get Started</a>
+                 <a href="contact.php" class="btn btn-primary rounded-pill text-white py-3 px-5 wow fadeInUp" data-wow-delay="0.1s">Get Started</a>
                 </div>
             </div>
         </div>
@@ -108,96 +119,70 @@
 <!-- About End -->
 
 <!-- Key Features Start -->
-<div class="container-fluid feature py-5">
-    <div class="container py-5">
-        <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="sub-style">
-                <h4 class="sub-title px-3 mb-0">Key Features</h4>
-            </div>
-            <h1 class="display-3 mb-4">Why Choose Vaccino?</h1>
-        </div>
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="feature-item p-4">
-                    <div class="feature-icon mb-4">
-                        <div class="p-3 d-inline-flex bg-white rounded-circle shadow-sm">
-                            <i class="fas fa-bell fa-3x text-primary"></i>
-                        </div>
-                    </div>
-                    <div class="feature-content d-flex flex-column">
-                        <h5 class="mb-3">Vaccination Reminders</h5>
-                        <p>Never miss a dose with automated SMS/email alerts and dashboards.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="feature-item p-4">
-                    <div class="feature-icon mb-4">
-                        <div class="p-3 d-inline-flex bg-white rounded-circle shadow-sm">
-                            <i class="fas fa-chart-line fa-3x text-primary"></i>
-                        </div>
-                    </div>
-                    <div class="feature-content d-flex flex-column">
-                        <h5 class="mb-3">Parent Dashboard</h5>
-                        <p>Track your child’s vaccination schedule and progress in one place.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="feature-item p-4">
-                    <div class="feature-icon mb-4">
-                        <div class="p-3 d-inline-flex bg-white rounded-circle shadow-sm">
-                            <i class="fas fa-calendar-check fa-3x text-primary"></i>
-                        </div>
-                    </div>
-                    <div class="feature-content d-flex flex-column">
-                        <h5 class="mb-3">Online Appointments</h5>
-                        <p>Book vaccination slots at nearby centers with just a few clicks.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="feature-item p-4">
-                    <div class="feature-icon mb-4">
-                        <div class="p-3 d-inline-flex bg-white rounded-circle shadow-sm">
-                            <i class="fas fa-bullhorn fa-3x text-primary"></i>
-                        </div>
-                    </div>
-                    <div class="feature-content d-flex flex-column">
-                        <h5 class="mb-3">Awareness Campaigns</h5>
-                        <p>Stay updated with national immunization drives and health education.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid feature py-5 bg-light">
+  <div class="container py-5">
+    <div class="section-title mb-5 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+      <div class="sub-style">
+        <h4 class="sub-title px-3 mb-0 text-primary">Key Features</h4>
+      </div>
+      <h1 class="display-5 mb-4">Why Choose Vaccino?</h1>
     </div>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Feature Card 1 -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center">
+          <div class="mb-3">
+            <i class="fas fa-bell fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-2">Vaccination Reminders</h5>
+          <p>Never miss a dose with automated SMS/email alerts and dashboards.</p>
+        </div>
+      </div>
+
+      <!-- Feature Card 2 -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center">
+          <div class="mb-3">
+            <i class="fas fa-chart-line fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-2">Parent Dashboard</h5>
+          <p>Track your child’s vaccination schedule and progress in one place.</p>
+        </div>
+      </div>
+
+      <!-- Feature Card 3 -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center">
+          <div class="mb-3">
+            <i class="fas fa-calendar-check fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-2">Online Appointments</h5>
+          <p>Book vaccination slots at nearby centers with just a few clicks.</p>
+        </div>
+      </div>
+
+      <!-- Feature Card 4 -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center">
+          <div class="mb-3">
+            <i class="fas fa-bullhorn fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-2">Awareness Campaigns</h5>
+          <p>Stay updated with national immunization drives and health education.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 <!-- Key Features End -->
 
+<!-- WOW.js Scroll Animation Init -->
+<script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+
+
 <?php include 'footer.php'; ?>
-
-<style>
-:root {
-    --primary: #00cdf5;
-}
-.text-primary {
-    color: var(--primary) !important;
-}
-.bg-primary {
-    background-color: var(--primary) !important;
-}
-.btn-primary {
-    background-color: var(--primary) !important;
-    border-color: var(--primary) !important;
-}
-.btn-primary:hover {
-    background-color: #00b7db !important;
-    border-color: #00b7db !important;
-}
-</style>
-
-
-

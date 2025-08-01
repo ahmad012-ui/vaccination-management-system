@@ -9,10 +9,10 @@
                     <p class="text-white" style="text-decoration: none;">Vaccino is an online vaccination booking and management system helping parents schedule timely vaccinations for their children with ease and convenience.</p>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-share fa-2x text-white me-2"></i>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn-square btn text-white rounded-circle mx-1" style="background-color:rgb(0, 204, 255);" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn-square btn text-white rounded-circle mx-1" style="background-color:rgb(0, 204, 255);" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn-square btn text-white rounded-circle mx-1" style="background-color:rgb(0, 204, 255);" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn-square btn text-white rounded-circle mx-1" style="background-color:rgb(0, 204, 255);" href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
