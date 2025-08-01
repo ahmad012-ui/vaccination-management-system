@@ -84,7 +84,7 @@ if (!$result) {
     <title>Vaccination Request</title>
 </head>
 <body>
-    <h2>Send Vaccination Request</h2>
+    <!-- <h2>Send Vaccination Request</h2>
     <form action="submit_request.php" method="POST">
         <label>Child:</label>
         <select name="child_id" required>
@@ -114,7 +114,7 @@ if (!$result) {
         <input type="date" name="preferred_date" required><br><br>
 
         <button type="submit">Send Request</button>
-    </form>
+    </form> -->
 </body>
 </html>
 
@@ -133,7 +133,7 @@ if (!$result) {
 <!-- Header End -->
 
 <!-- Team Start -->
-<div class="container-fluid team py-5">
+<div class="container-fluid team py-5" style="height: 1000px;">
     <div class="container py-5">
         <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="sub-style">
@@ -217,54 +217,11 @@ if (!$result) {
         </div>
     </div>
 </div>
+ <?php include 'footer.php'; ?>
 <!-- Team End -->
 
         <!-- Footer Start -->
-<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <!-- Project Info -->
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="text-white mb-4"><i class="fas fa-syringe me-3"></i>Vaccino</h4>
-                    <p>Vaccino is an online vaccination booking and management system helping parents schedule timely vaccinations for their children with ease and convenience.</p>
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-share fa-2x text-white me-2"></i>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="btn-square btn btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Quick Links -->
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Quick Links</h4>
-                    <a href="about.html"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                    <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                    <a href="blog.html"><i class="fas fa-angle-right me-2"></i> News & Updates</a>
-                    <a href="team.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-                </div>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Contact Info</h4>
-                    <a href="#"><i class="fa fa-map-marker-alt me-2"></i> Karachi, Pakistan</a>
-                    <a href="mailto:info@vaccino.com"><i class="fas fa-envelope me-2"></i> info@vaccino.com</a>
-                    <a href="mailto:support@vaccino.com"><i class="fas fa-envelope me-2"></i> support@vaccino.com</a>
-                    <a href="tel:+923001234567"><i class="fas fa-phone me-2"></i> +92 300 1234567</a>
-                    <a href="#"><i class="fas fa-print me-2"></i> +92 300 1234567</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Footer End -->
   
         <!-- JavaScript Libraries -->
