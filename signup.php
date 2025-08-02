@@ -1,3 +1,35 @@
+<?php
+include 'db.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim($_POST['name'] ?? '');
+    $email = trim(strtolower($_POST['email'] ?? ''));
+    $password = $_POST['password'] ?? '';
+    $created_at = date("Y-m-d H:i:s");
+
+    // Server-side validation
+    if (empty($name) || !preg_match("/^[A-Za-z\s]+$/", $name)) {
+        echo "<script>alert('Invalid name. Only letters and spaces allowed.');</script>";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script>alert('Invalid email format.');</script>";
+    } elseif (strlen($password) < 6) {
+        echo "<script>alert('Password must be at least 6 characters long.');</script>";
+    } else {
+        // All good, insert into database
+        $Password = $password ;
+
+        $sql = "INSERT INTO users (name, email, password, created_at)
+                VALUES ('$name', '$email', '$Password', '$created_at')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>alert('Signup successful!'); window.location.href='login.php';</script>";
+        } else {
+            echo "<script>alert('Error: " . $conn->error . "');</script>";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,43 +118,16 @@
 </head>
 <body>
 <?php
-include 'db.php'; // database connection file
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = trim($_POST['name'] ?? '');
-    $email = trim(strtolower($_POST['email'] ?? ''));
-    $password = $_POST['password'] ?? '';
-    $created_at = date("Y-m-d H:i:s");
 
-    if (!empty($name) && !empty($email) && !empty($password)) {
-        // Password hash
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        $sql = "INSERT INTO users (name, email, password, created_at)
-                VALUES ('$name', '$email', '$hashedPassword', '$created_at')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('Signup successful!'); window.location.href='login.php';</script>";
-        } else {
-            echo "Error: " . $conn->error;
-        }
-    } else {
-        echo "<script>alert('Please fill in all fields.');</script>";
-    }
-}
 ?>
 
-<form method="POST">
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button type="submit">Login</button>
-</form>
-
+<?php include 'topbar.php'; ?>
 <?php include 'navbar.php'; ?>
 
   <div class="signup-wrapper">
     <main>
-      <header><h2>Create Your Account </h2></header>
+      <header><h2>Create Your Account</h2></header>
       <section>
         <form id="signupForm" action="signup.php" method="POST" onsubmit="return validateSignup()">
           <label for="name" class="sr-only">Name</label>
@@ -141,13 +146,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
       </section>
       <footer class="links">
-        Already have an account? <a href="login.html">Login</a>
+        Already have an account? <a href="login.php">Login</a>
       </footer>
     </main>
   </div>
+  <script>
+function validateSignup() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  let isValid = true;
+
+  // Reset errors
+  document.getElementById("nameError").textContent = "";
+  document.getElementById("emailError").textContent = "";
+  document.getElementById("passwordError").textContent = "";
+
+  // Name validation (only letters and spaces)
+  const nameRegex = /^[A-Za-z\s]+$/;
+  if (!nameRegex.test(name)) {
+    document.getElementById("nameError").textContent = "Name must contain only letters and spaces.";
+    isValid = false;
+  }
+
+  // Email validation
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+if (!emailRegex.test(email)) {
+  document.getElementById("emailError").textContent = "Please enter a valid email address (e.g. name@example.com).";
+  isValid = false;
+}
+
+
+  // Password validation
+  if (password.length < 6) {
+    document.getElementById("passwordError").textContent = "Password must be at least 6 characters long.";
+    isValid = false;
+  }
+
+  return isValid;
+}
+</script>
 
   <?php include 'footer.php'; ?>
 </body>
 </html>
-
 

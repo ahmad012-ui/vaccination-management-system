@@ -21,12 +21,11 @@
             <div class="col-md-6 col-lg-6 col-xl-4">
                 <div class="footer-item d-flex flex-column">
                     <h4 class="mb-4 text-white">Quick Links</h4>
-                    <a href="about.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right text-white me-2"></i> About Us</a>
-                    <a href="contact.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-                    <a href="#" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                    <a href="#" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                    <a href="blog.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> News & Updates</a>
-                    <a href="team.html" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+                    <a href="index.php" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i>Home</a>
+                    <a href="about.php" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right text-white me-2"></i> About Us</a>
+                    <a href="contact.php" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                    <a href="blog.php" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> News & Updates</a>
+                    <a href="testimonial.php" class="text-white" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Feedback</a>
                 </div>
             </div>
 
