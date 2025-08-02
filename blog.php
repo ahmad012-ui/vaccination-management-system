@@ -105,11 +105,7 @@ a.text-primary:hover {
                 <a href="index.php" class="nav-item nav-link">Home</a>
                 <a href="about.php" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="team.php" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.php" class="dropdown-item">Feedback</a>
-                    </div>
+                    <a href="blog.php" class="nav-link">Blog</a>
                 </div>
                 <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
             </div>
@@ -125,7 +121,7 @@ a.text-primary:hover {
         <h4 class="text-primary">Latest Health Updates</h4>
         <h1 class="mb-4">Vaccination Awareness & Updates</h1>
         <p>Stay informed about the importance of vaccines, health campaigns, and real-life success stories.</p>
-    </div>
+    </div> 
     <div class="row g-4">
         <!-- Blog Card 1 -->
        <div class="col-lg-4 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">

@@ -13,27 +13,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <link href="style.css" rel="stylesheet">
-<?php
-if (isset($_POST['login'])) {
-    $name = trim($_POST['name']);
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-
-    // Basic validation
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "<script>alert('Invalid email format.'); window.location.href='login.php';</script>";
-        exit();
-    }
-
-    if (strlen($password) < 6) {
-        echo "<script>alert('Password must be at least 6 characters.'); window.location.href='login.php';</script>";
-        exit();
-    }
-
-    // Continue with login logic...
-}
-?>
 <style>
     body {
       margin: 0;
@@ -163,7 +142,7 @@ if (isset($_POST['login'])) {
         $_SESSION['email'] = $row['email'];
         $_SESSION['user_name'] = $row['full_name'];
 
-        header("Location: user-dashboard.php");
+        header("Location: user.php");
        echo "<script>alert('Login successful! Welcome, $name!');</script>";
        exit();
 
@@ -175,7 +154,7 @@ echo "Password: $password<br>";
 exit();
 }
 ?>
-<?php include 'topbar.php'; ?>
+
 <?php include 'navbar.php'; ?>
 
 <!-- login content -->
@@ -197,29 +176,6 @@ exit();
     </div>
   </div>
 </section>
-<script>
-function validateForm() {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  const nameRegex = /^[A-Za-z\s]+$/;
-
-
-  if (email === "" || !email.includes("@") || !email.includes(".")) {
-    alert("Please enter a valid email.");
-    return false;
-  }
-
-  if (password.length < 6) {
-    alert("Password must be at least 6 characters.");
-    return false;
-  }
-
-  return true;
-}
-</script>
-
 </body>
 </html>
 

@@ -12,14 +12,8 @@
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.php" class="nav-item nav-link">Home</a>
                         <a href="about.php" class="nav-item nav-link">About</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="blog.php" class="dropdown-item">Our Blog</a>
-                                <a href="testimonial.php" class="dropdown-item">Feedback</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
+                            <a href="blog.php" class="nav-item nav-link">Blog</a>
+                        <a href="contact.php" class="nav-item nav-link">Contact Us</a>
                     </div>
                     <a href="login.php" class="btn rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0" style="background-color:rgb(0, 204, 255);"  >Book Appointment</a>
                     <a href="login.php"class="fa-solid fa-circle-user   px-1 flex-wrap" style="color:rgb(0, 204, 255);font-size: 32px; margin-left: 20px;"></i></a>

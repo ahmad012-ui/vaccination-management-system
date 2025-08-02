@@ -1,7 +1,6 @@
 <?php
-$conn = mysqli_connect('localhost','root','','mysql');
+$conn = mysqli_connect('localhost','root','','e_project');
 if($conn){
-    echo  "connected";
 }else{
     echo "not connected" ;
 }

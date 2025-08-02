@@ -37,11 +37,7 @@
                         <a href="index.php" class="nav-item nav-link">Home</a>
                         <a href="about.php" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="blog.php" class="dropdown-item">Our Blog</a>
-                                <a href="testimonial.php" class="dropdown-item">Feedback</a>
-                            </div>
+                            <a href="#" class="nav-link">Blog</a>
                         </div>
                         <a href="contact.php" class="nav-item nav-link active">Contact Us</a>
                     </div>
