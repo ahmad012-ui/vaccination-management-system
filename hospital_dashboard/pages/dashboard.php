@@ -5,16 +5,19 @@
       session_start();
   }
 
-  if (!isset($_SESSION['hospital_id'])) {
-    $_SESSION['hospital_id'] = 1; // TEMP for dev only — use real ID from login
-  }
+  // Check if hospital is logged in
+if (!isset($_SESSION['hospital_id'])) {
+  // Redirect to login if not authenticated
+  header("Location: ../auth/login.php"); // adjust path as needed
+  exit();
+}
 
-  $hospital_id = $_SESSION['hospital_id'];
+$hospital_id = $_SESSION['hospital_id'];
 
- // For safety if connection fails
-  if (!$conn) {
-    die("<h3 style='color:red'>Database connection failed: " . mysqli_connect_error() . "</h3>");
-  }
+// Check DB connection
+if (!$conn) {
+  die("<h3 style='color:red'>Database connection failed: " . mysqli_connect_error() . "</h3>");
+}
 
   // Fetch appointments count by preferred date (latest 7)
   $appointmentsData = [];

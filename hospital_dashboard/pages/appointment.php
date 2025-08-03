@@ -3,14 +3,18 @@ session_start();
 include '../database/db.php';
 
 // Temporary dev override (remove after login system works)
+// Check if hospital is logged in
 if (!isset($_SESSION['hospital_id'])) {
-    $_SESSION['hospital_id'] = 1; // Replace with actual ID from your DB
+  // Redirect to login if not authenticated
+  header("Location: ../auth/login.php"); // adjust path as needed
+  exit();
 }
 
 $hospital_id = $_SESSION['hospital_id'];
 
+// Check DB connection
 if (!$conn) {
-    die("<h3 style='color:red'>Database connection failed: " . mysqli_connect_error() . "</h3>");
+  die("<h3 style='color:red'>Database connection failed: " . mysqli_connect_error() . "</h3>");
 }
 
 

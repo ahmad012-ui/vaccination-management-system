@@ -2,11 +2,19 @@
 session_start();
 include '../database/db.php';
 
+// Check if hospital is logged in
 if (!isset($_SESSION['hospital_id'])) {
-    $_SESSION['hospital_id'] = 1; // TEMP for dev only
+  // Redirect to login if not authenticated
+  header("Location: ../auth/login.php"); // adjust path as needed
+  exit();
 }
 
 $hospital_id = $_SESSION['hospital_id'];
+
+// Check DB connection
+if (!$conn) {
+  die("<h3 style='color:red'>Database connection failed: " . mysqli_connect_error() . "</h3>");
+}
 
 // Fetch existing hospital and user info
 $query = "SELECT h.name AS hospital_name, h.address, h.contact, h.status, u.name AS user_name, u.email, u.user_id

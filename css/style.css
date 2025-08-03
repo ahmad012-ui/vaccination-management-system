@@ -180,7 +180,7 @@
 
 .topbar a:hover,
 .topbar a i:hover {
-    color: var(--bs-secondary) !important;
+    color: rgb(17, 157, 208) !important;
 }
 
 
@@ -439,7 +439,7 @@
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-2.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1055,7 +1055,7 @@
 
 /*** Contact Start ***/
 .contact {
-    background: linear-gradient(rgba(21, 185, 217, 0.9), rgba(21, 185, 217, 0.9)), url(../img/carousel-1.jpg);
+    /* background: linear-gradient(rgba(21, 185, 217, 0.9), rgba(21, 185, 217, 0.9)), url(../img/carousel-1.jpg); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1153,7 +1153,7 @@
 
 /*** Footer Start ***/
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../img/carousel-2.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../img/carousel-1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

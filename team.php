@@ -18,19 +18,23 @@
             <div class="sub-style">
                 <h4 class="sub-title px-3 mb-0">Meet Our Experts</h4>
             </div>
-            <h1 class="display-3 mb-4">Trusted Professionals Behind Your Child’s Health</h1>
+            <h1 class="display-3 mb-4">Trusted Professionals Behind Your Child's Health</h1>
             <p class="mb-0">Our dedicated medical professionals ensure that your children receive timely and safe vaccinations. Meet the people behind our trusted healthcare service.</p>
         </div>
+        
         <div class="row g-4 justify-content-center">
-
             <!-- Doctor 1 -->
             <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item rounded">
                     <div class="team-img rounded-top h-100">
                         <img src="img/doctor1.jpg" class="img-fluid rounded-top w-100" alt="Doctor">
                         <div class="team-icon d-flex justify-content-center">
-                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
@@ -46,8 +50,12 @@
                     <div class="team-img rounded-top h-100">
                         <img src="img/doctor2.jpg" class="img-fluid rounded-top w-100" alt="Doctor">
                         <div class="team-icon d-flex justify-content-center">
-                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
@@ -58,7 +66,6 @@
             </div>
 
             <!-- Add more doctors as needed -->
-
         </div>
     </div>
 </div>
