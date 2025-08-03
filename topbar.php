@@ -3,9 +3,9 @@
             <div class="row gx-0 align-items-center" style="height: 45px;">
                 <div class="col-lg-8 text-center text-lg-start mb-lg-0">
                     <div class="d-flex flex-wrap">
-                        <a href="#" class="text-light me-4"><i class="fas fa-map-marker-alt me-2" style="color:rgb(0, 204, 255);"></i>Find A Location</a>
-                        <a href="#" class="text-light me-4"><i class="fas fa-phone-alt me-2" style="color:rgb(0, 204, 255);"></i>+01234567890</a>
-                        <a href="#" class="text-light me-0"><i class="fas fa-envelope me-2" style="color:rgb(0, 204, 255);"></i>Example@gmail.com</a>
+                        <a href="#" class="text-light me-4"style="text-decoration: none;"><i class="fas fa-map-marker-alt me-2" style="color:rgb(0, 204, 255);"></i>Find A Location</a>
+                        <a href="#" class="text-light me-4"style="text-decoration: none;"><i class="fas fa-phone-alt me-2" style="color:rgb(0, 204, 255);"></i>+01234567890</a>
+                        <a href="#" class="text-light me-0" style="text-decoration: none;"><i class="fas fa-envelope me-2" style="color:rgb(0, 204, 255);"></i>Example@gmail.com</a>
                     </div>
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">

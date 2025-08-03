@@ -66,7 +66,7 @@
     <h3 class="text-white display-3 mb-4" style="font-family: serif;">Contact Us</h3>
     <ol class="breadcrumb justify-content-center mb-0">
       <li class="breadcrumb-item"><a href="index.php" style="text-decoration: none;">Home</a></li>
-      <li class="breadcrumb-item"><a href="blog.php" style="text-decoration: none;">Pages</a></li>
+      <li class="breadcrumb-item"><a href="blog.php" style="text-decoration: none;">Blog</a></li>
       <li class="breadcrumb-item" style="color:rgb(0, 204, 255);">Contact</li>
     </ol>
   </div>

@@ -37,7 +37,7 @@
                         <a href="index.php" class="nav-item nav-link">Home</a>
                         <a href="about.php" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link">Blog</a>
+                            <a href="blog.php" class="nav-link">Blog</a>
                         </div>
                         <a href="contact.php" class="nav-item nav-link active">Contact Us</a>
                     </div>
@@ -54,7 +54,7 @@
         <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">About Us</h3>
         <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item"><a href="blog.php">Blog</a></li>
             <li class="breadcrumb-item active text-primary">About Us</li>
         </ol>    
     </div>
