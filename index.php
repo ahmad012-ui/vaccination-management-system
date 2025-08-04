@@ -38,11 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         echo "Child Insert Error: " . mysqli_error($conn);
-        echo "Child Insert Error: " . mysqli_error($conn);
     }
 }
-
-$hospitals = mysqli_query($conn, "SELECT hospital_id, name FROM hospitals WHERE status='active'");
 
 $hospitals = mysqli_query($conn, "SELECT hospital_id, name FROM hospitals WHERE status='active'");
 $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");

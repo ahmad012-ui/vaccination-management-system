@@ -7,6 +7,11 @@
     <!-- Add this in your <head> section -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css"> <!-- your main template stylesheet -->
+    
+    <!-- icon --> <!-- Font & Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script> <!-- if used -->
     <link href="style.css" rel="stylesheet">
@@ -101,58 +106,41 @@
 <body>
 <?php
 session_start();
-include "db.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = trim(mysqli_real_escape_string($conn, $_POST['email']));
+    $password = trim($_POST['password']);
 
-    // Hardcoded Admin Check
-    if ($email === "admin@gmail.com" && $password === "admin123") {
+    // Admin login
+    if ($email === "admin@example.com" && $password === "admin123") {
+        $_SESSION['role'] = "admin";
         $_SESSION['email'] = $email;
-        $_SESSION['role'] = 'admin';
-
-        echo "<script>
-            alert('Login successful as Admin');
-            window.location.href = 'admin-dashboard/pages/dashboard.php';
-        </script>";
+        header("Location: admin-dashboard/pages/dashboard.php");
         exit;
     }
 
-    // Regular User (Parent / Hospital) Check
+    // Check in users table
     $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
     $result = mysqli_query($conn, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-
+        $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['email'] = $row['email'];
         $_SESSION['user_name'] = $row['name'];
-        $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['role'] = $row['role'];
 
         if ($row['role'] === 'parent') {
-            $_SESSION['parent_id'] = $row['user_id'];
-            echo "<script>
-                alert('Login successful as Parent');
-                window.location.href = 'user-dashboard/user-dashboard.php';
-            </script>";
+            header("Location: user-dashboard/user-dashboard.php");
             exit;
-        }
-
-        if ($row['role'] === 'hospital') {
-            // Fetch hospital_id
-            $hospitalQuery = "SELECT hospital_id FROM hospitals WHERE user_id = {$row['user_id']} LIMIT 1";
-            $hospitalResult = mysqli_query($conn, $hospitalQuery);
-
-            if ($hospitalResult && mysqli_num_rows($hospitalResult) > 0) {
-                $hospital = mysqli_fetch_assoc($hospitalResult);
-                $_SESSION['hospital_id'] = $hospital['hospital_id'];
-
-                echo "<script>
-                    alert('Login successful as Hospital');
-                    window.location.href = 'hospital_dashboard/pages/dashboard.php';
-                </script>";
+        } elseif ($row['role'] === 'hospital') {
+            // Hospital ID fetch
+            $hQuery = "SELECT hospital_id FROM hospitals WHERE user_id = {$row['user_id']} LIMIT 1";
+            $hResult = mysqli_query($conn, $hQuery);
+            if ($hResult && mysqli_num_rows($hResult) > 0) {
+                $hosp = mysqli_fetch_assoc($hResult);
+                $_SESSION['hospital_id'] = $hosp['hospital_id'];
+                header("Location: hospital_dashboard/pages/dashboard.php");
                 exit;
             } else {
                 echo "<script>
@@ -163,15 +151,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
             }
         }
     } else {
-        echo "<script>
-            alert('Invalid email or password.');
-            window.location.href = 'login.php';
-        </script>";
+        echo "<script>alert('Invalid email or password.'); window.location.href='login.php';</script>";
         exit;
     }
 }
 ?>
 
+<?php include 'topbar.php'; ?>
 <?php include 'navbar.php'; ?>
 
 <!-- login content -->
