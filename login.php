@@ -106,6 +106,7 @@
 <body>
 <?php
 session_start();
+include "database/db.php"; // ✅ Correct path
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $email = trim(mysqli_real_escape_string($conn, $_POST['email']));
@@ -143,10 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                 header("Location: hospital_dashboard/pages/dashboard.php");
                 exit;
             } else {
-                echo "<script>
-                    alert('Hospital account not properly linked.');
-                    window.location.href = 'login.php';
-                </script>";
+                echo "<script>alert('Hospital account not linked.'); window.location.href='login.php';</script>";
                 exit;
             }
         }
