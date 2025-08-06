@@ -69,7 +69,8 @@
         <h3 class="text-white display-3 mb-4" style="font-family: serif;">Contact Us</h3>
         <ol class="breadcrumb justify-content-center mb-0">
             <li class="breadcrumb-item"><a href="index.php" style="text-decoration: none;">Home</a></li>
-            <li class="breadcrumb-item"><a href="blog.php" style="text-decoration: none;">Pages</a></li>
+            <li class="breadcrumb-item"><a href="about.php" style="text-decoration: none;">About</a></li>
+            <li class="breadcrumb-item"><a href="blog.php" style="text-decoration: none;">Blog</a></li>
             <li class="breadcrumb-item" style="color:rgb(0, 204, 255);">Contact</li>
         </ol>
     </div>
@@ -157,22 +158,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!-- Right: Map + Social Icons -->
             <div class="col-lg-5 d-flex flex-column">
-                <!-- Social Icons -->
-                <!-- <div class="d-flex justify-content-end gap-2 mb-3">
-                    <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-white" style="width:40px; height:40px;">
-                        <i class="fab fa-facebook-f text-black"></i>
-                    </a>
-                    <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-white" style="width:40px; height:40px;">
-                        <i class="fab fa-twitter text-black"></i>
-                    </a>
-                    <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-white" style="width:40px; height:40px;">
-                        <i class="fab fa-instagram text-black"></i>
-                    </a>
-                    <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-white" style="width:40px; height:40px;">
-                        <i class="fab fa-linkedin-in text-black"></i>
-                    </a>
-                </div> -->
-
                 <!-- Google Map (full height) -->
                 <div class="flex-grow-1 shadow-lg rounded overflow-hidden" style="min-height: 460px;">
                     <iframe src="https://maps.google.com/maps?q=karachi&t=&z=13&ie=UTF8&iwloc=&output=embed"

@@ -160,7 +160,7 @@ $child_gender = $user['children'][0]['gender'] ?? 'N/A';
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
+            <a href="../index.php" class="navbar-brand p-0">
                 <h1 class="m-0" style="color:rgb(0, 204, 255);">
                     <i class="fas fa-syringe me-3"></i>Vaccino
                 </h1>
@@ -189,8 +189,7 @@ $child_gender = $user['children'][0]['gender'] ?? 'N/A';
             <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">User Dashboard</h3>
             <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                <li class="breadcrumb-item active text-primary">About</li>
+                <li class="breadcrumb-item active text-primary">Dashboard</li>
             </ol>    
         </div>
     </div>

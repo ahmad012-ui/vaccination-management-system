@@ -39,9 +39,8 @@
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">About Us</h3>
         <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item"><a href="blog.php">Blog</a></li>
-            <li class="breadcrumb-item active text-primary">About Us</li>
+            <li class="breadcrumb-item nav-item"><a class="nav-link" href="index.php">Home</a></li>
+            <li class="breadcrumb-item" style="color:rgb(0, 204, 255);">About Us</li>
         </ol>    
     </div>
 </div>

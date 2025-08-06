@@ -3,13 +3,41 @@ session_start();
 include "db.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $role = mysqli_real_escape_string($conn, $_POST['role']);
+    // Get and sanitize input
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+    $role = $_POST['role'];
 
-    // Check if email already exists
-    $check_query = "SELECT * FROM users WHERE email = '$email'";
+    // === BACKEND VALIDATION ===
+
+    // 1. Validate name (only letters and spaces, at least 3 characters)
+    if (!preg_match("/^[A-Za-z\s]{3,}$/", $name)) {
+        echo "<script>alert('Full Name must be at least 3 characters and contain only letters and spaces.'); window.location.href='signup.php';</script>";
+        exit;
+    }
+
+    // 2. Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script>alert('Invalid email address.'); window.location.href='signup.php';</script>";
+        exit;
+    }
+
+    // 3. Validate password (minimum 6 chars, one letter and one number)
+    if (strlen($password) < 6 || !preg_match("/[A-Za-z]/", $password) || !preg_match("/\d/", $password)) {
+        echo "<script>alert('Password must be at least 6 characters and include at least one letter and one number.'); window.location.href='signup.php';</script>";
+        exit;
+    }
+
+    // 4. Validate role
+    if ($role !== 'parent' && $role !== 'hospital') {
+        echo "<script>alert('Invalid role selected.'); window.location.href='signup.php';</script>";
+        exit;
+    }
+
+    // 5. Check if email already exists
+    $email_safe = mysqli_real_escape_string($conn, $email);
+    $check_query = "SELECT * FROM users WHERE email = '$email_safe'";
     $check_result = mysqli_query($conn, $check_query);
 
     if (mysqli_num_rows($check_result) > 0) {
@@ -17,25 +45,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
         exit;
     }
 
-    // Insert new user
-    $insert_query = "INSERT INTO users (name, email, password, role) VALUES ('$name', '$email', '$password', '$role')";
-    
+    // 6. Hash the password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // 7. Insert into users table
+    $name_safe = mysqli_real_escape_string($conn, $name);
+    $role_safe = mysqli_real_escape_string($conn, $role);
+    $insert_query = "INSERT INTO users (name, email, password, role) VALUES ('$name_safe', '$email_safe', '$hashed_password', '$role_safe')";
+
     if (mysqli_query($conn, $insert_query)) {
         $user_id = mysqli_insert_id($conn);
-        
-        // If role is hospital, create hospital record
+
+        // === Hospital role-specific logic ===
         if ($role === 'hospital') {
-            $hospital_name = mysqli_real_escape_string($conn, $_POST['hospital_name']);
-            $hospital_address = mysqli_real_escape_string($conn, $_POST['hospital_address']);
-            $hospital_phone = mysqli_real_escape_string($conn, $_POST['hospital_phone']);
-            
-            $hospital_query = "INSERT INTO hospitals (user_id, name, address, phone, status) 
-                              VALUES ('$user_id', '$hospital_name', '$hospital_address', '$hospital_phone', 'active')";
+            $hospital_name = trim($_POST['hospital_name']);
+            $hospital_address = trim($_POST['hospital_address']);
+
+            // Hospital fields validation
+            if (empty($hospital_name) || empty($hospital_address)) {
+                echo "<script>alert('Hospital name and address are required.'); window.location.href='signup.php';</script>";
+                exit;
+            }
+
+            $hospital_name_safe = mysqli_real_escape_string($conn, $hospital_name);
+            $hospital_address_safe = mysqli_real_escape_string($conn, $hospital_address);
+
+            $hospital_query = "INSERT INTO hospitals (user_id, name, address, status) 
+                               VALUES ('$user_id', '$hospital_name_safe', '$hospital_address_safe', 'active')";
             mysqli_query($conn, $hospital_query);
         }
-        
+
         echo "<script>alert('Registration successful! Please login.'); window.location.href='login.php';</script>";
         exit;
+
     } else {
         echo "<script>alert('Registration failed!'); window.location.href='signup.php';</script>";
         exit;
@@ -51,6 +93,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     <title>Signup-Vaccino</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Add this in your <head> section -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> <!-- your main template stylesheet -->
+    
+    <!-- icon --> <!-- Font & Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script> <!-- if used -->
+    <link href="style.css" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -135,9 +188,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     <div class="signup-container">
         <h2>Create Account</h2>
         <form action="signup.php" method="POST">
-            <input type="text" placeholder="Full Name" name="name" required />
+            <input type="text" placeholder="Full Name" name="name" required  pattern="[A-Za-z\s]{3,}"/>
             <input type="email" placeholder="Email" name="email" required />
-            <input type="password" placeholder="Password" name="password" required />
+            <input type="password" placeholder="Password" name="password" required  pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}" 
+             title="Password must be at least 6 characters long and include a number." />
             
             <select name="role" id="role" required onchange="toggleHospitalFields()">
                 <option value="">Select Role</option>
@@ -183,5 +237,3 @@ function toggleHospitalFields() {
 <?php include 'footer.php'; ?>
 </body>
 </html>
-
-

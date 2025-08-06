@@ -341,17 +341,21 @@ if (!$conn) {
 
  
   <!-- Script for charts (appointments) -->
-  <script>
-   const appointmentsChartLabels = <?= json_encode(array_reverse($appointmentsLabels)); ?>;
-   const appointmentsChartData = <?= json_encode(array_reverse($appointmentsData)); ?>;
-  </script>
-  <!-- Script for charts (vaccines) -->
-  <script>
-    const vaccineLabels = <?= json_encode($vaccineNames); ?>;
-    const vaccineData = <?= json_encode($vaccineQuantities); ?>;
-  </script>
-  <script src="../assets/js/chart.js"></script>
+<script>
+  const appointmentsChartLabels = <?= json_encode(array_reverse($appointmentsLabels)); ?>;
+  const appointmentsChartData = <?= json_encode(array_reverse($appointmentsData)); ?>;
+</script>
 
+<!-- Script for charts (vaccines) -->
+<script>
+  const vaccineLabels = <?= json_encode($vaccineNames); ?>;
+  const vaccineData = <?= json_encode($vaccineQuantities); ?>;
+</script>
+<!-- Chart.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Your Custom Chart Script -->
+<script src="../assets/js/chart.js"></script>
   <!-- for mobile view  -->
   <script>
   document.addEventListener("DOMContentLoaded", function () {

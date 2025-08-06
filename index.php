@@ -93,9 +93,7 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
     <div class="container text-center py-5">
         <h3 class="text-white display-3 mb-4" style="font-family: serif;">Home</h3>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="about.php" style="text-decoration: none;">About</a></li>
-            <li class="breadcrumb-item"><a href="blog.php" style="text-decoration: none;">Blog</a></li>
-            <li class="breadcrumb-item" style="color:rgb(0, 204, 255);">Contact</li>
+            <li class="breadcrumb-item" style="color:rgb(0, 204, 255);"><a href="index.php" style="text-decoration: none;">Home</a></li>
         </ol>
     </div>
 </div>
@@ -109,7 +107,7 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
                 
                 <form method="POST" <?php if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'parent') echo 'onsubmit="alert(\'Please login first\'); return false;"'; ?>>
                     <div class="mb-3">
-                        <label class="form-label">Child Name</label>
+                        <label class="form-label">Name</label>
                         <input type="text" name="child_name" class="form-control" required>
                     </div>
 

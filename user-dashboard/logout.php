@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: ../../login.php"); // Use correct path from the folder
+header("Location: ../login.php"); // Use correct path from the folder
 exit;
 ?>
