@@ -58,6 +58,7 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
     <style>
         .form-container {
             background-color: #f8f9fa;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
@@ -170,6 +171,7 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
         
         <div class="row g-4 justify-content-center">
             <!-- Doctor 1 -->
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item rounded">
                     <div class="team-img rounded-top">
                         <img src="img/team-2.jpg" class="img-fluid rounded-top" alt="Dr. Saad Ahmed">
