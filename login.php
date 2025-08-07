@@ -105,6 +105,9 @@
 </head>
 <body>
 <?php
+// Set session to last for 2 days (172800 seconds)
+ini_set('session.gc_maxlifetime', 172800);
+ini_set('session.cookie_lifetime', 172800);
 session_start();
 include "database/db.php"; // ✅ Correct path
 

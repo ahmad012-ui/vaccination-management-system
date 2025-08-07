@@ -1,4 +1,26 @@
+<?php
+// Start session if not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
+// Set default redirect to login
+$dashboardLink = "login.php";
+
+if (isset($_SESSION['role'])) {
+    switch ($_SESSION['role']) {
+        case 'admin':
+            $dashboardLink = "admin-dashboard/pages/dashboard.php";
+            break;
+        case 'hospital':
+            $dashboardLink = "hospital_dashboard/pages/dashboard.php";
+            break;
+        case 'parent':
+            $dashboardLink = "user-dashboard/user-dashboard.php";
+            break;
+    }
+}
+?>
 
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
@@ -22,16 +44,18 @@
                 <a href="contact.php" class="nav-item nav-link">Contact Us</a>
             </div>
             
-            <a href="login.php" 
-               class="btn rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0" 
-               style="background-color:rgb(0, 204, 255);">
-                Book Appointment
-            </a>
             
-            <a href="login.php" 
-               class="fa-solid fa-circle-user px-1 flex-wrap" 
-               style="color:rgb(0, 204, 255);font-size: 32px; margin-left: 20px;">
-            </a>
+
+<a href="<?= $dashboardLink ?>" 
+   class="btn rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0" 
+   style="background-color:rgb(0, 204, 255);">
+    Book Appointment
+</a>
+
+<a href="<?= $dashboardLink ?>" 
+   class="fa-solid fa-circle-user px-1 flex-wrap" 
+   style="color:rgb(0, 204, 255); font-size: 32px; margin-left: 20px;">
+</a>
         </div>
     </nav>
 </div>

@@ -58,7 +58,6 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
     <style>
         .form-container {
             background-color: #f8f9fa;
-            padding: 40px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
@@ -99,9 +98,9 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
 </div>
 
 <!-- Form Start -->
-<div class="container mt-5">
+<div class="container mt-5 w-100">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-12 col-md-12 col-lg-8">
             <div class="form-container">
                 <h2 class="text-center mb-4" style="color:rgb(0, 204, 255);">Send Vaccination Request</h2>
                 
@@ -171,7 +170,6 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
         
         <div class="row g-4 justify-content-center">
             <!-- Doctor 1 -->
-            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item rounded">
                     <div class="team-img rounded-top">
                         <img src="img/team-2.jpg" class="img-fluid rounded-top" alt="Dr. Saad Ahmed">
@@ -182,13 +180,13 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
                     </div>
                     <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
                         <h5>Dr. Saad Ahmed</h5>
-                        <p class="mb-0">Child Health <br> Consultant</p>
+                        <p class="mb-0">Child Health Consultant</p>
                     </div>
                 </div>
             </div>
             
             <!-- Doctor 2 -->
-            <div class="col-md-6 col-lg-4 col-xl-3 d-flex">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item rounded w-100">
                     <div class="team-img rounded-top">
                         <img src="img/team-1.jpg" class="img-fluid rounded-top" alt="Dr. Ayesha Khan">
@@ -205,7 +203,7 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
             </div>
 
             <!-- Doctor 3 -->
-            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item rounded">
                     <div class="team-img rounded-top">
                         <img src="img/team-3.jpg" class="img-fluid rounded-top" alt="Dr. Mehwish Tariq">
@@ -222,7 +220,7 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
             </div>
             
             <!-- Doctor 4 -->
-            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item rounded">
                     <div class="team-img rounded-top">
                         <img src="img/team-4.jpg" class="img-fluid rounded-top" alt="Dr. Waqas Rafi">
@@ -233,7 +231,7 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
                     </div>
                     <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
                         <h5>Dr. Waqas Rafi</h5>
-                        <p class="mb-0">Public Health Health<br> Officer</p>
+                        <p class="mb-0">Public Health Health Officer</p>
                     </div>
                 </div>
             </div>

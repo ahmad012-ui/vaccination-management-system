@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     }
 
     // 6. Hash the password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = $password;
 
     // 7. Insert into users table
     $name_safe = mysqli_real_escape_string($conn, $name);
@@ -192,6 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
             <input type="email" placeholder="Email" name="email" required />
             <input type="password" placeholder="Password" name="password" required  pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}" 
              title="Password must be at least 6 characters long and include a number." />
+             <small>Password must be at least 6 characters long and include a letter and a number.</small>
             
             <select name="role" id="role" required onchange="toggleHospitalFields()">
                 <option value="">Select Role</option>
