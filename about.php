@@ -28,6 +28,12 @@
     <!-- Libraries -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .container {
+          overflow-x: auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -57,15 +63,15 @@
             </div>
             <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.4s">
                 <div class="section-title text-start mb-5">
-                    <h4 class="sub-title pe-3 mb-0">About Vaccino</h4>
+                    <h4 style="color: rgb(0, 204, 255);" class="sub-title text color-primary pe-3 mb-0">About Vaccino</h4>
                     <h1 class="display-3 mb-4">We Are Working to Ensure Every Child Is Vaccinated</h1>
                     <p class="mb-4">Vaccino is an online vaccination scheduling and awareness platform that simplifies immunization for parents and guardians. Our mission is to support timely and complete vaccination for all children in Pakistan through modern technology and healthcare coordination.</p>
                     <div class="mb-4">
-                        <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i>Real-time reminders and booking options</p>
-                        <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i>Integrated government campaigns</p>
-                        <p class="text-secondary"><i class="fa fa-check text-primary me-2"></i>Secure and private digital health records</p>
+                        <p class="text-secondary"><i style="color: rgb(0, 204, 255);" class="fa fa-check me-2"></i>Real-time reminders and booking options</p>
+                        <p class="text-secondary"><i style="color: rgb(0, 204, 255);" class="fa fa-check me-2"></i>Integrated government campaigns</p>
+                        <p class="text-secondary"><i style="color: rgb(0, 204, 255);" class="fa fa-check me-2"></i>Secure and private digital health records</p>
                     </div>
-                    <a href="contact.php" class="btn btn-primary rounded-pill text-white py-3 px-5 wow fadeInUp" data-wow-delay="0.1s">Get Started</a>
+                    <a href="contact.php" style="background-color: rgb(0, 204, 255); color: white;" class="btn rounded-pill text-white py-3 px-5 wow fadeInUp" data-wow-delay="0.1s">Get Started</a>
                 </div>
             </div>
         </div>
@@ -86,9 +92,9 @@
         <div class="row g-4 justify-content-center">
             <!-- Feature Card 1 -->
             <div class="col-md-6 col-lg-4 col-xl-3 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-                <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                <div class="card h-100 border-0 shadow-sm p-4 text text-center">
                     <div class="mb-3">
-                        <i class="fas fa-bell fa-3x text-primary"></i>
+                        <i class="fas fa-bell fa-3x" style="color: rgb(0, 204, 255);"></i>
                     </div>
                     <h5 class="mb-2">Vaccination Reminders</h5>
                     <p>Never miss a dose with automated SMS/email alerts and dashboards.</p>
@@ -97,9 +103,9 @@
 
             <!-- Feature Card 2 -->
             <div class="col-md-6 col-lg-4 col-xl-3 wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
-                <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                <div class="card h-100 border-0 shadow-sm p-4 text text-center">
                     <div class="mb-3">
-                        <i class="fas fa-chart-line fa-3x text-primary"></i>
+                        <i class="fas fa-chart-line fa-3x" style="color: rgb(0, 204, 255);"></i>
                     </div>
                     <h5 class="mb-2">Parent Dashboard</h5>
                     <p>Track your child's vaccination schedule and progress in one place.</p>
@@ -108,9 +114,9 @@
 
             <!-- Feature Card 3 -->
             <div class="col-md-6 col-lg-4 col-xl-3 wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
-                <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                <div class="card h-100 border-0 shadow-sm p-4 text text-center">
                     <div class="mb-3">
-                        <i class="fas fa-calendar-check fa-3x text-primary"></i>
+                        <i class="fas fa-calendar-check fa-3x" style="color: rgb(0, 204, 255);"></i>
                     </div>
                     <h5 class="mb-2">Online Appointments</h5>
                     <p>Book vaccination slots at nearby centers with just a few clicks.</p>
@@ -119,9 +125,9 @@
 
             <!-- Feature Card 4 -->
             <div class="col-md-6 col-lg-4 col-xl-3 wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
-                <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                <div class="card h-100 border-0 shadow-sm p-4 text text-center">
                     <div class="mb-3">
-                        <i class="fas fa-bullhorn fa-3x text-primary"></i>
+                        <i class="fas fa-bullhorn fa-3x" style="color: rgb(0, 204, 255); width: 50px;"></i>
                     </div>
                     <h5 class="mb-2">Awareness Campaigns</h5>
                     <p>Stay updated with national immunization drives and health education.</p>

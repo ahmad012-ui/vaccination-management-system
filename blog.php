@@ -62,7 +62,7 @@
         <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
             <li class="breadcrumb-item"><a href="index.php" style="text-decoration: none;">Home</a></li>
             <li class="breadcrumb-item"><a href="about.php" style="text-decoration: none;">About</a></li>
-            <li class="breadcrumb-item active text-primary">Our Blog</li>
+            <li class="breadcrumb-item active" style="color:rgb(0, 204, 255);">Our Blog</li>
         </ol>    
     </div>
 </div>
@@ -70,7 +70,7 @@
 <!-- Blog Start -->
 <div class="container py-5">
     <div class="text-center mb-5">
-        <h4 class="text-primary">Latest Health Updates</h4>
+        <h4 style="color: rgb(0, 204, 255);">Latest Health Updates</h4>
         <h1 class="mb-4">Vaccination Awareness & Updates</h1>
         <p>Stay informed about the importance of vaccines, health campaigns, and real-life success stories.</p>
     </div>
@@ -83,7 +83,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Why Childhood Vaccines Matter</h5>
                     <p class="card-text">Vaccines protect your child from deadly diseases. Learn what's recommended by age.</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                    <a href="#" style="border-color: rgb(0, 204, 255); color: rgb(0, 204, 255);" class="btn btn-sm">Read More</a>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
                 <div class="card-body">
                     <h5 class="card-title">National Immunization Drive 2025</h5>
                     <p class="card-text">Check schedules and how our system helps parents track and register easily.</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                    <a href="#" style="border-color: rgb(0, 204, 255); color: rgb(0, 204, 255);" class="btn btn-outline-primary btn-sm">Read More</a>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Success Story: Preventing Outbreak</h5>
                     <p class="card-text">How a local hospital used our system to prevent a measles outbreak in 2025.</p>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                    <a href="#" style="border-color: rgb(0, 204, 255); color: rgb(0, 204, 255);" class="btn btn-outline-primary btn-sm">Read More</a>
                 </div>
             </div>
         </div>

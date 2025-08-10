@@ -110,13 +110,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2 class="text-white mb-4">Get in Touch</h2>
                 <form method="POST" action="contact.php">
                     <div class="mb-3">
-                        <input type="text" id="form" name="name" class="form-control border border-white text-white bg-transparent" placeholder="Your Name" required>
+                        <input type="text" id="form" name="name" pattern="^[a-zA-Z\s]+$" class="form-control border border-white text-white bg-transparent" placeholder="Your Name" required>
                     </div>
                     <div class="mb-3">
-                        <input type="email" id="form" name="email" class="form-control border border-white text-white bg-transparent" placeholder="Your Email" required>
+                        <input type="email" id="form" name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="form-control border border-white text-white bg-transparent" placeholder="Your Email" required>
                     </div>
                     <div class="mb-3">
-                        <input type="text" id="form" name="phone" class="form-control border border-white text-white bg-transparent" placeholder="Your Phone" required>
+                        <input type="text" id="form" name="phone" pattern="^\d{11}$" class="form-control border border-white text-white bg-transparent" placeholder="Your Phone" required>
                     </div>
                     <div class="mb-3">
                         <input type="text" id="form" name="subject" class="form-control border border-white text-white bg-transparent" placeholder="Subject" required>

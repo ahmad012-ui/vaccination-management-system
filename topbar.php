@@ -16,16 +16,16 @@
         </div>
         <div class="col-lg-4 text-center text-lg-end">
             <div class="d-flex align-items-center justify-content-end">
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3">
+                <a href="#" class="btn btn-light btn-square align-items-center border rounded-circle nav-fill me-3">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3">
+                <a href="#" class="btn btn-light btn-square align-items-center border rounded-circle nav-fill me-3">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-3">
+                <a href="#" class="btn btn-light btn-square align-items-center border rounded-circle nav-fill me-3">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="btn btn-light btn-square border rounded-circle nav-fill me-0">
+                <a href="#" class="btn btn-light btn-square align-items-center border rounded-circle nav-fill me-0">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>

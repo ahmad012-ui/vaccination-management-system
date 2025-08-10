@@ -49,6 +49,7 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaccino - Vaccination Request</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -56,6 +57,9 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
           integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        .container {
+          overflow-x: auto;
+        }
         .form-container {
             background-color: #f8f9fa;
             padding: 30px;
@@ -103,19 +107,28 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
     <div class="row justify-content-center">
         <div class="col-12 col-md-12 col-lg-8">
             <div class="form-container">
-                <h2 class="text-center mb-4" style="color:rgb(0, 204, 255);">Send Vaccination Request</h2>
+                <h2 class="text-center mb-4 text-custom">Send Vaccination Request</h2>
                 
                 <form method="POST" <?php if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'parent') echo 'onsubmit="alert(\'Please login first\'); return false;"'; ?>>
+
+                    <!-- Child Name: Only letters, spaces, and hyphens -->
                     <div class="mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" name="child_name" class="form-control" required>
+                        <input type="text" 
+                               name="child_name" 
+                               class="form-control" 
+                               pattern="^[A-Za-z\s\-]{2,50}$" 
+                               title="Name should be 2-50 characters long and contain only letters, spaces, and hyphens." 
+                               required>
                     </div>
 
+                    <!-- Date of Birth -->
                     <div class="mb-3">
                         <label class="form-label">Date of Birth</label>
                         <input type="date" name="child_dob" class="form-control" required>
                     </div>
 
+                    <!-- Gender -->
                     <div class="mb-3">
                         <label class="form-label">Gender</label>
                         <select name="child_gender" class="form-control" required>
@@ -126,26 +139,29 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
                         </select>
                     </div>
 
+                    <!-- Hospital -->
                     <div class="mb-3">
                         <label for="hospital_id" class="form-label">Hospital</label>
                         <select name="hospital_id" class="form-control" required>
                             <option value="">Select Hospital</option>
                             <?php while ($row = mysqli_fetch_assoc($hospitals)) { ?>
-                                <option value="<?= $row['hospital_id'] ?>"><?= $row['name'] ?></option>
+                                <option value="<?= $row['hospital_id'] ?>"><?= htmlspecialchars($row['name']) ?></option>
                             <?php } ?>
                         </select>
                     </div>
 
+                    <!-- Vaccine -->
                     <div class="mb-3">
                         <label for="vaccine_id" class="form-label">Vaccine</label>
                         <select name="vaccine_id" class="form-control" required>
                             <option value="">Select Vaccine</option>
                             <?php while ($row = mysqli_fetch_assoc($vaccines)) { ?>
-                                <option value="<?= $row['vaccine_id'] ?>"><?= $row['name'] ?></option>
+                                <option value="<?= $row['vaccine_id'] ?>"><?= htmlspecialchars($row['name']) ?></option>
                             <?php } ?>
                         </select>
                     </div>
 
+                    <!-- Preferred Date -->
                     <div class="mb-3">
                         <label class="form-label">Preferred Date</label>
                         <input type="date" name="preferred_date" class="form-control" required>
@@ -159,10 +175,11 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
 </div>
 <!-- Form End -->
 
+
 <div class="container-fluid team py-5" style="min-height: 900px;">
     <div class="container py-5">
-        <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="sub-style">
+        <div class="section-title mb-5 wow fadeInUp text text-center" data-wow-delay="0.1s">
+            <div class="sub-style" style="color: rgb(0, 204, 255);">
                 <h4 class="sub-title px-3 mb-0">Meet Our Experts</h4>
             </div>
             <h1 class="display-3 mb-4">Trusted Professionals Behind Your Child's Health</h1>
@@ -180,9 +197,9 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
-                    <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                    <div class="team-content text text-center border border-top-0 rounded-bottom p-4">
                         <h5>Dr. Saad Ahmed</h5>
-                        <p class="mb-0">Child Health Consultant</p>
+                        <p class="mb-0 text-dark">Child Health Consultant</p>
                     </div>
                 </div>
             </div>
@@ -197,9 +214,9 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
-                    <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                    <div class="team-content text text-center border border-top-0 rounded-bottom p-4">
                         <h5>Dr. Ayesha Khan</h5>
-                        <p class="mb-0">Pediatric Vaccination Specialist</p>
+                        <p class="mb-0 text-dark">Pediatric Vaccination Specialist</p>
                     </div>
                 </div>
             </div>
@@ -214,9 +231,9 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
-                    <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                    <div class="team-content text text-center border border-top-0 rounded-bottom p-4">
                         <h5>Dr. Mehwish Tariq</h5>
-                        <p class="mb-0">Immunization Program Officer</p>
+                        <p class="mb-0 text-dark">Immunization Program Officer</p>
                     </div>
                 </div>
             </div>
@@ -231,9 +248,9 @@ $vaccines = mysqli_query($conn, "SELECT vaccine_id, name FROM vaccines");
                             <a class="btn btn-square btn-primary text-white rounded-circle mx-1" href="#"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
-                    <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                    <div class="team-content text text-center border border-top-0 rounded-bottom p-4">
                         <h5>Dr. Waqas Rafi</h5>
-                        <p class="mb-0">Public Health Health Officer</p>
+                        <p class="mb-0 text-dark">Public Health Health Officer</p>
                     </div>
                 </div>
             </div>

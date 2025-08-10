@@ -95,24 +95,24 @@ if (!$conn) {
     max-height: 250px;
     }
     @media (max-width: 767px) {
-  .main-content {
+   .main-content {
     margin-left: 0 !important;
     width: 100% !important;
-  }
+   }
 
-  .g-sidenav-show .sidenav {
-    display: none !important;
-  }
+    .g-sidenav-show .sidenav {
+     display: none !important;
+    }
 
-  .container-fluid {
+   .container-fluid {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
-  }
+   }
 
-  body {
+   body {
     overflow-x: hidden;
-  }
-}
+   }
+   }
   </style>
 </head>
 
@@ -201,7 +201,7 @@ if (!$conn) {
     <div class="row mb-4">
       <div class="col-lg-12">
         <?php if (isset($_SESSION['hospital_name'])): ?>
-          <h2 class="text-center">Welcome to the <?php echo $_SESSION['hospital_name']; ?> Dashboard</h2>
+          <h2 class="text-center">Welcome to the <?php echo htmlspecialchars($_SESSION['hospital_name']); ?> Dashboard</h2>
           <p class="text-center text-muted">Manage your hospital's operations efficiently.</p>
         <?php else: ?>
           <h2 class="text-center">Welcome to the Hospital Dashboard</h2>

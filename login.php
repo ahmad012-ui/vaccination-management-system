@@ -138,19 +138,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
             header("Location: user-dashboard/user-dashboard.php");
             exit;
         } elseif ($row['role'] === 'hospital') {
-            // Hospital ID fetch
-            $hQuery = "SELECT hospital_id FROM hospitals WHERE user_id = {$row['user_id']} LIMIT 1";
-            $hResult = mysqli_query($conn, $hQuery);
-            if ($hResult && mysqli_num_rows($hResult) > 0) {
-                $hosp = mysqli_fetch_assoc($hResult);
-                $_SESSION['hospital_id'] = $hosp['hospital_id'];
-                header("Location: hospital_dashboard/pages/dashboard.php");
-                exit;
-            } else {
-                echo "<script>alert('Hospital account not linked.'); window.location.href='login.php';</script>";
-                exit;
-            }
-        }
+    // Hospital ID fetch + hospital name
+    $hQuery = "SELECT hospital_id, name FROM hospitals WHERE user_id = {$row['user_id']} LIMIT 1";
+    $hResult = mysqli_query($conn, $hQuery);
+    if ($hResult && mysqli_num_rows($hResult) > 0) {
+        $hosp = mysqli_fetch_assoc($hResult);
+        $_SESSION['hospital_id'] = $hosp['hospital_id'];
+        $_SESSION['hospital_name'] = $hosp['name']; // ✅ Store hospital name
+        header("Location: hospital_dashboard/pages/dashboard.php");
+        exit;
+    } else {
+        echo "<script>alert('Hospital account not linked.'); window.location.href='login.php';</script>";
+        exit;
+    }
+}
     } else {
         echo "<script>alert('Invalid email or password.'); window.location.href='login.php';</script>";
         exit;

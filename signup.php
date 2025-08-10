@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script> <!-- if used -->
-    <link href="style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -203,7 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
             <div class="hospital-fields" id="hospitalFields">
                 <input type="text" placeholder="Hospital Name" name="hospital_name" />
                 <input type="text" placeholder="Hospital Address" name="hospital_address" />
-                <input type="text" placeholder="Hospital Phone" name="hospital_phone" />
+                <input type="text" placeholder="Hospital Phone" name="hospital_phone" pattern="^\d{11}$" title="Enter a valid 11-digit phone number." />
             </div>
             
             <button type="submit" name="signup">Sign Up</button>

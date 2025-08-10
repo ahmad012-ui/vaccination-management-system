@@ -25,7 +25,7 @@ $query = "SELECT a.request_id, c.name AS child_name, a.preferred_date, a.status,
           JOIN children c ON a.child_id = c.child_id
           JOIN users u ON c.parent_id = u.user_id
           WHERE a.hospital_id = $hospital_id
-          ORDER BY a.preferred_date DESC";
+          ORDER BY a.request_id DESC";
 
 $result = mysqli_query($conn, $query);
 
